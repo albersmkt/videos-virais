@@ -1,6 +1,11 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": null,
-  "outputDirectory": "web",
-  "functions": {"api/*.py": {"includeFiles": "{server.py,web/catalog.json}"}}
+  "builds": [
+    {"src": "api/index.py", "use": "@vercel/python", "config": {"includeFiles": ["server.py", "web/catalog.json"]}},
+    {"src": "web/**", "use": "@vercel/static"}
+  ],
+  "routes": [
+    {"src": "/api/(state|login|register|logout|password|hooks|script)/?", "dest": "/api/index.py?action=$1"},
+    {"src": "/", "dest": "/web/index.html"},
+    {"src": "/(app.js|style.css|catalog.json)", "dest": "/web/$1"}
+  ]
 }
