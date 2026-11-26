@@ -2,8 +2,8 @@
 Estúdio pessoal para Windows, macOS e Linux. Requer Python 3.9 ou superior. Usa apenas a biblioteca padrão.
 
 ## Abrir pelo navegador na Vercel
-Importe o repositório com diretório raiz padrão e configurações do vercel.json. O calendário e a demonstração imobiliária abrem sem configurar serviços.
-Para gerar conteúdo novo, conecte um Postgres dedicado ao projeto (DATABASE_URL ou POSTGRES_URL), adicione OPENAI_API_KEY e defina STUDIO_ACCESS_CODE com um código privado para autorizar o seu cadastro. Faça Redeploy e use esse código em Criar conta. O app cria suas tabelas no esquema shark_reels. Configure os segredos nas variáveis do projeto, nunca no repositório.
+Importe o repositório com diretório raiz padrão e configurações do vercel.json. O calendário e o gerador por modelos funcionam no navegador sem cadastro.
+Para habilitar também a geração por IA, conecte um Postgres dedicado ao projeto (DATABASE_URL ou POSTGRES_URL), adicione OPENAI_API_KEY e defina STUDIO_ACCESS_CODE com um código privado para autorizar o seu cadastro. Faça Redeploy e use esse código em Criar conta. O app cria suas tabelas no esquema shark_reels. Configure os segredos nas variáveis do projeto, nunca no repositório.
 
 ## Abrir no Windows
 1. Baixe e extraia o projeto ou clone este repositório. Abra a pasta do projeto.
@@ -14,9 +14,9 @@ Para gerar conteúdo novo, conecte um Postgres dedicado ao projeto (DATABASE_URL
 No macOS ou Linux, abra o terminal na pasta extraída e execute `python3 iniciar.py`. Para execução sem perguntas, use `python3 server.py`. As variáveis opcionais são OPENAI_API_KEY, OPENAI_MODEL, PORT e NO_BROWSER=1. O modelo padrão é gpt-4o-mini.
 
 ## Produzir um Reel
-Escolha o dia ou combine busca e filtro. Abra o cartão e consulte a referência quando disponível. O exemplo imobiliário abre sem cadastro e oferece três ganchos fixos. Ele funciona como uma amostra do formato de saída em qualquer dia.
+Escolha o dia ou combine busca e filtro. Abra o cartão e consulte a referência quando disponível. Informe o nicho e clique em “Gerar 3 exemplos”. No modo por modelos, os 100 créditos iniciais e os resultados ficam no dispositivo. Há temas específicos para imóveis, IA, fotografia e cozinha e uma estrutura geral para os demais nichos. Selecione um gancho para abrir o roteiro narrado e a versão com frase na tela e descrição.
 
-Para usar IA, crie uma conta local, informe o nicho e clique em “Gerar 3 ganchos”. O servidor recebe apenas a ideia e os dados de conteúdo necessários para a geração. Uma rodada bem-sucedida custa um crédito interno. Cada nova conta começa com 100 créditos de demonstração, independentes do saldo da API. Selecione um gancho e clique em “Abrir as duas versões”. A IA produz o roteiro narrado e a frase com descrição na mesma chamada. Abrir cada gancho pela primeira vez usa a API. Reabrir uma versão salva reutiliza o texto. As chamadas do provedor podem gerar custos mesmo quando o app não debita créditos internos.
+Com a integração de IA configurada, entre na conta e use o mesmo botão. O servidor recebe apenas a ideia e os dados de conteúdo necessários para a geração. Uma rodada bem-sucedida custa um crédito interno. Cada nova conta começa com 100 créditos de demonstração, independentes do saldo da API. Selecione um gancho e clique em “Abrir as duas versões”. A IA produz o roteiro narrado e a frase com descrição na mesma chamada. Abrir cada gancho pela primeira vez usa a API. Reabrir uma versão salva reutiliza o texto. As chamadas do provedor podem gerar custos mesmo quando o app não debita créditos internos.
 
 ## Dados e referências
 O calendário contém 72 dias e 13 formatos, com títulos reescritos e instruções próprias. Os vídeos disponíveis abrem no Instagram ou pelo player incorporado e dependem da disponibilidade do post. Os dados de conta, o saldo e as gerações ficam em studio.sqlite, criado ao executar. Nicho, progresso e a última seleção por dia ficam no navegador, separados por conta. Para preservar dados locais, mantenha a pasta e utilize o mesmo navegador e endereço. O servidor escuta apenas no seu computador. A versão local usa SQLite. A hospedagem na Vercel usa Postgres.

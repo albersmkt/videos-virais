@@ -94,7 +94,7 @@ class Handler(BaseHTTPRequestHandler):
             with closing(connect()) as db:
                 u,_=self.session(db)
                 return self.send(200,dict(ai=bool(KEY),hosted=HOSTED,user=dict(id=u["id"],email=u["email"],credits=u["credits"]) if u else None))
-        files={"/":("index.html","text/html"),"/app.js":("app.js","text/javascript"),"/style.css":("style.css","text/css"),"/catalog.json":("catalog.json","application/json")}
+        files={"/modelos.js":("modelos.js","text/javascript"),"/":("index.html","text/html"),"/app.js":("app.js","text/javascript"),"/style.css":("style.css","text/css"),"/catalog.json":("catalog.json","application/json")}
         if path not in files:return self.send(404,{})
         name,mime=files[path]; self.send(200,(WEB/name).read_bytes(),mime+"; charset=utf-8")
     def do_POST(self):

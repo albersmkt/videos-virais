@@ -6,6 +6,6 @@
   "routes": [
     {"src": "/api/(state|login|register|logout|password|hooks|script)/?", "dest": "/api/index.py?action=$1"},
     {"src": "/", "dest": "/web/index.html"},
-    {"src": "/(app.js|style.css|catalog.json)", "dest": "/web/$1"}
+    {"src": "/(modelos.js|app.js|style.css|catalog.json)", "dest": "/web/$1"}
   ]
 }

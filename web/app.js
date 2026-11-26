@@ -17,12 +17,80 @@ function dayId(){return Number(location.hash.match(/^#dia\/(\d+)$/)?.[1])}
 const link=d=>'#dia/'+d;
 const pad=n=>String(n).padStart(2,'0');
 function draw(){const c=catalog[dayId()-1];if(c)detail(c);else home()}
-function home(){const done=local.done.length;$('app').innerHTML='<section class="hero"><div><div class="meta">Estúdio de conteúdo</div><h1>Calendário<br><span>de ideias.</span></h1><div class="stats">72 dias &nbsp;·&nbsp; 13 formatos</div></div><div><div>'+done+' de 72 dias concluídos</div><div class="meter"><i style="width:'+done/72*100+'%"></i></div><label for="niche">Seu nicho</label><input id="niche" maxlength="140" placeholder="Ex.: corretor de imóveis" value="'+esc(local.niche)+'"></div></section><div class="line"><h2>Escolha uma ideia</h2><input id="search" aria-label="Buscar ideia ou formato" placeholder="Buscar ideia ou formato" value="'+esc(query)+'"></div><div class="filters" id="filters"></div><div class="grid" id="grid"></div>';$('niche').oninput=e=>{local.niche=e.target.value;persist()};$('search').oninput=e=>{query=e.target.value;cards()};cards()}
-function cards(){const formats=['Todos',...new Set(catalog.map(c=>c.format))];$('filters').innerHTML=formats.map(f=>'<button aria-pressed="'+(filter===f)+'" class="'+(filter===f?'active':'')+'" data-filter="'+esc(f)+'">'+esc(f)+'</button>').join('');$('filters').onclick=e=>{if(e.target.dataset.filter){filter=e.target.dataset.filter;cards()}};const matches=catalog.filter(c=>(filter==='Todos'||filter===c.format)&&norm([c.title,c.format,pad(c.day)].join(' ')).includes(norm(query)));$('grid').innerHTML=matches.map(c=>'<a class="card" href="'+link(c.day)+'"><div class="line"><span class="meta">Dia '+pad(c.day)+'</span><span class="badge">'+esc(c.format)+'</span></div><div class="num">'+pad(c.day)+'</div><h3>'+esc(c.title)+'</h3><p>'+esc(c.tip)+'</p><footer>'+ (local.done.includes(c.day)?'✓ Concluído':'Abrir ideia')+'</footer></a>').join('')||'<p>Nenhuma ideia encontrada com esses filtros.</p>'}
-function demoScript(i){const d=demos[i];return {cenas:[{tempo:'0–4s',imagem:d.take,fala:d.hook+'.'},...d.items.map(([a,b],n)=>({tempo:(4+n*6)+'–'+(10+n*6)+'s',imagem:a,fala:b}))],legenda:'Leve esta ideia para a próxima visita. Qual desses detalhes você costuma observar?',frase:d.hook,take:d.take+' Mantenha a frase na tela por 8 segundos, sem narração.',descricao:d.hook+'\n\n'+d.items.map(([a,b],n)=>(n+1)+'. '+a+'. '+b).join('\n\n')+'\n\nSalve para consultar na próxima visita.'}}
-function detail(c){const job=local.jobs[c.day],done=local.done.includes(c.day),related=catalog.filter(k=>k.title===c.title&&k.day!==c.day);$('app').innerHTML='<a class="back" href="#inicio">Voltar ao calendário</a><div class="studio"><article class="panel"><div class="line"><span class="meta">Dia '+pad(c.day)+'</span><span class="badge">'+esc(c.format)+'</span></div><h1>'+esc(c.title)+'</h1><p>'+esc(c.tip)+'</p><button id="done">'+(done?'✓ Concluído · desfazer':'Marcar como concluído')+'</button><h3>Referência de gravação</h3>'+(c.ref?'<button id="video">Carregar vídeo</button> <a target="_blank" rel="noopener" href="https://www.instagram.com/reel/'+c.ref+'/">Ver no Instagram</a><div id="player"></div>':'<p class="muted">'+esc(c.tip)+'</p>')+(related.length?'<h3>Outros formatos desta ideia</h3>'+related.map(k=>'<p><a href="'+link(k.day)+'">Dia '+k.day+' · '+esc(k.format)+'</a></p>').join(''):'')+'<hr><div class="line">'+(c.day>1?'<a href="'+link(c.day-1)+'">Dia anterior</a>':'')+(c.day<72?'<a href="'+link(c.day+1)+'">Próximo dia</a>':'')+'</div></article><section class="panel"><details><summary>3 exemplos desta ideia</summary>'+c.examples.map(v=>'<p class="sample">'+esc(v)+'</p>').join('')+'</details><hr><span class="meta">Gerador de ganchos</span><h2>Adapte ao seu nicho</h2><label for="niche">Seu nicho</label><input id="niche" maxlength="140" value="'+esc(local.niche)+'" placeholder="Ex.: corretor de imóveis"><p><button id="generate" class="primary">Gerar 3 ganchos · 1 crédito</button></p>'+(!state.ai?'<p class="muted secondary">IA desativada. Para gerar conteúdo, configure a chave conforme o README.</p>':'')+'<button id="demo">Experimentar exemplo imobiliário</button><div id="hooks"></div></section></div><div id="output"></div>';$('done').onclick=()=>{local.done=done?local.done.filter(x=>x!==c.day):[...local.done,c.day];persist();detail(c)};if($('video'))$('video').onclick=()=>{$('player').innerHTML='<iframe title="Reel de referência" loading="lazy" src="https://www.instagram.com/reel/'+c.ref+'/embed/"></iframe>'};$('niche').oninput=e=>{local.niche=e.target.value;persist()};$('demo').onclick=()=>{local.jobs[c.day]={demo:true,niche:'Corretor de imóveis',hooks:demos.map(x=>x.hook),scripts:{}};persist();detail(c)};$('generate').onclick=async()=>{if(!state.ai)return say('Para usar a IA, configure OPENAI_API_KEY no servidor.');if(!state.user)return openAuth('login');const niche=local.niche.trim();if(niche.length<2)return say('Informe seu nicho primeiro.');await run($('generate'),'Gerando ganchos…',async()=>{const key=c.day+'|'+niche;local.pending??={};const id=local.pending[key]??=crypto.randomUUID();persist();const data=await api('hooks',{job:id,day:c.day,niche});local.jobs[c.day]={...data,id,niche,scripts:{}};delete local.pending[key];persist();await sync();draw()})};if(job)showHooks(c,job)}
+function home() {
+  const done=local.done.length;
+  const balance=(state.ai && state.user)?state.user.credits:(local.modelCredits??100);
+  $('app').innerHTML=`
+    <section class="overview">
+      <div><span class="meta">Arquivo prático de conteúdo</span>
+        <h1>Ideias para gravar.</h1>
+        <p>72 dias · 13 formatos · <strong>${pad(done)}/72 concluídos</strong></p>
+      </div>
+      <div class="dashboard">
+        <div><span class="meta">Seu progresso</span><strong>${Math.round(done/72*100)}%</strong><div class="meter"><i style="width:${done/72*100}%"></i></div></div>
+        <div><span class="meta">${state.ai && state.user?'Créditos de IA':'Créditos de modelos'}</span><strong>${balance}</strong><small>1 por geração de ganchos</small></div>
+        <div><label class="meta" for="niche">Qual seu nicho?</label><input id="niche" maxlength="140" placeholder="Ex.: corretor de imóveis" value="${esc(local.niche)}"><small>Salvo neste dispositivo</small></div>
+      </div>
+    </section>
+    <section class="calendar"><div class="line"><div><span class="meta">Calendário</span><h2>Escolha um dia. <em>Grave com direção.</em></h2></div>
+    <input type="search" id="search" aria-label="Buscar ideia ou formato" placeholder="Buscar ideia, formato..." value="${esc(query)}"></div>
+    <div class="filters" id="filters"></div><div class="grid" id="grid"></div></section>`;
+  $('niche').oninput=e=>{local.niche=e.target.value;persist()};
+  $('search').oninput=e=>{query=e.target.value;cards()};
+  cards();
+}
+function cards() {
+  const formats=['Todos',...new Set(catalog.map(c=>c.format))];
+  $('filters').innerHTML=formats.map(f=>`<button aria-pressed="${filter===f}" class="${filter===f?'active':''}" data-filter="${esc(f)}">${esc(f)}</button>`).join('');
+  $('filters').onclick=e=>{if(e.target.dataset.filter){filter=e.target.dataset.filter;cards()}};
+  const matches=catalog.filter(c=>(filter==='Todos'||filter===c.format)&&norm([c.title,c.format,pad(c.day)].join(' ')).includes(norm(query)));
+  $('grid').innerHTML=matches.map(c=>`<a class="card" href="${link(c.day)}"><div class="line"><span class="meta">Dia ${pad(c.day)}</span><span class="badge">${esc(c.format)}</span></div>
+  <div class="num">${pad(c.day)}</div><h3>${esc(c.title)}</h3><p>${esc(c.summary)}</p><footer>${local.done.includes(c.day)?'✓ Concluído':'Abrir dia'}<span aria-hidden="true">↗</span></footer></a>`).join('')||'<p>Nenhuma ideia encontrada com esses filtros.</p>';
+}
+function detail(c) {
+  const job=local.jobs[c.day],done=local.done.includes(c.day);
+  const related=catalog.filter(k=>k.title===c.title && k.day!==c.day);
+  const useAI=!!(state.ai && state.user);
+  const balance=useAI?state.user.credits:(local.modelCredits??100);
+  $('app').innerHTML=`<a class="back" href="#inicio">‹ &nbsp; Calendário</a><div class="studio day">
+  <article><span class="meta">Dia ${pad(c.day)}</span> · <span class="badge">${esc(c.format)}</span>
+  <h1>${esc(c.title)}</h1><p class="muted">${esc(c.summary)}</p><button id="done">${done?'✓ Concluído · desfazer':'Marcar como concluído'}</button>
+  <section class="reference"><span class="meta">Vídeo de referência · ${esc(c.format)}</span><h2>O modelo original</h2>
+  ${c.ref?`<div class="line"><span class="badge">Instagram</span><a target="_blank" rel="noopener" href="https://www.instagram.com/reel/${c.ref}/">Ver original ↗</a></div><iframe loading="lazy" title="Reel de referência do dia ${c.day}" src="https://www.instagram.com/reel/${c.ref}/embed/"></iframe>`:'<p class="muted">Este dia está sem vídeo de referência.</p>'}
+  </section></article><section>
+  <span class="meta">Exemplos prontos</span>${c.examples.map(v=>`<p class="example">${esc(v)}</p>`).join('')}
+  <div class="generator"><div class="line"><span class="badge">Gerar para o meu nicho</span><span class="badge">${balance} créditos</span></div>
+  <h2>3 exemplos prontos, adaptados ao seu nicho.</h2><p class="muted">${useAI?'Geração por IA':'Geração por modelos do calendário'} · 1 crédito por rodada.</p>
+  <label for="niche">Seu nicho</label><input id="niche" maxlength="140" value="${esc(local.niche)}" placeholder="Ex.: corretor de imóveis">
+  <p><button id="generate" class="primary">Gerar 3 exemplos · −1</button></p>
+  <div id="hooks"></div></div></section></div><div id="output"></div>
+  <section class="daynav">${related.length?'<h3>Outros formatos desta ideia</h3>'+related.map(k=>`<a class="btn" href="${link(k.day)}">Dia ${k.day} · ${esc(k.format)}</a>`).join(' '):''}
+  <div class="line">${c.day>1?`<a href="${link(c.day-1)}">Dia anterior</a>`:''}${c.day<72?`<a href="${link(c.day+1)}">Próximo dia</a>`:''}</div></section>`;
+  $('done').onclick=()=>{local.done=done?local.done.filter(x=>x!==c.day):[...local.done,c.day];persist();detail(c)};
+  $('niche').oninput=e=>{local.niche=e.target.value;persist()};
+  $('generate').onclick=async()=>{
+    const niche=local.niche.trim();
+    if(niche.length<2){$('niche').focus();return say('Informe seu nicho primeiro.')}
+    await run($('generate'),'Gerando exemplos…',async()=>{
+      if(useAI){
+        const key=c.day+'|'+niche; local.pending??={};
+        const id=local.pending[key]??=crypto.randomUUID();persist();
+        const data=await api('hooks',{job:id,day:c.day,niche});
+        local.jobs[c.day]={...data,id,niche,scripts:{}};delete local.pending[key];persist();await sync();
+      }else{
+        if(balance<1)return say('Seu saldo de créditos de modelos acabou.');
+        const last=local.jobs[c.day];
+        const round=last?.mode==='model' && last.niche===niche?last.round+1:0;
+        local.jobs[c.day]=modelBatch(c,niche,round);local.modelCredits=balance-1;persist();
+      }
+      draw();
+    });
+  };
+  if(job)showHooks(c,job);
+}
+function legacyDemo(i){const d=demos[i];return {cenas:[{tempo:'0–4s',imagem:d.take,fala:d.hook+'.'},...d.items.map(([a,b],n)=>({tempo:(4+n*6)+'–'+(10+n*6)+'s',imagem:a,fala:b}))],legenda:'Leve esta ideia para a próxima visita. Qual desses detalhes você costuma observar?',frase:d.hook,take:d.take+' Mantenha a frase na tela por 8 segundos, sem narração.',descricao:d.hook+'\n\n'+d.items.map(([a,b],n)=>(n+1)+'. '+a+'. '+b).join('\n\n')+'\n\nSalve para consultar na próxima visita.'}}
 async function run(button,label,fn){if(busy)return;busy=true;let prev=button.textContent;button.textContent=label;button.disabled=true;try{await fn()}catch(e){say(e.message)}finally{busy=false;button.disabled=false;button.textContent=prev}}
-function showHooks(c,j){$('hooks').innerHTML='<h3>'+(j.demo?'Exemplo guiado':'Escolha um gancho')+'</h3><p class="muted">'+esc(j.niche)+(j.demo?' · conteúdo de demonstração':'')+'</p>'+j.hooks.map((v,i)=>'<div class="sample"><p>'+esc(v)+'</p><button data-pick="'+i+'" class="'+(j.idx===i?'selected':'')+'">Abrir as duas versões</button> <button data-copyhook="'+i+'">Copiar gancho</button></div>').join('');$('hooks').onclick=async e=>{if(e.target.dataset.copyhook!==undefined)return copy(j.hooks[Number(e.target.dataset.copyhook)]);if(e.target.dataset.pick===undefined)return;const i=Number(e.target.dataset.pick);await run(e.target,'Preparando versões…',async()=>{j.scripts[i]??=j.demo?demoScript(i):await api('script',{job:j.id,idx:i});j.idx=i;persist();if(dayId()===c.day){detail(c);$('output').scrollIntoView({behavior:'smooth'})}})};if(j.scripts[j.idx])output(j.scripts[j.idx])}
+function showHooks(c,j){$('hooks').innerHTML='<h3>'+(j.demo?'Exemplo guiado':'Escolha um gancho')+'</h3><p class="muted">'+esc(j.niche)+(j.demo?' · conteúdo de demonstração':'')+'</p>'+j.hooks.map((v,i)=>'<div class="sample"><p>'+esc(v)+'</p><button data-pick="'+i+'" class="'+(j.idx===i?'selected':'')+'">Abrir as duas versões</button> <button data-copyhook="'+i+'">Copiar gancho</button></div>').join('');$('hooks').onclick=async e=>{if(e.target.dataset.copyhook!==undefined)return copy(j.hooks[Number(e.target.dataset.copyhook)]);if(e.target.dataset.pick===undefined)return;const i=Number(e.target.dataset.pick);await run(e.target,'Preparando versões…',async()=>{j.scripts[i]??=j.mode==='model'?modelScript(c,j,i):j.demo?legacyDemo(i):await api('script',{job:j.id,idx:i});j.idx=i;persist();if(dayId()===c.day){detail(c);$('output').scrollIntoView({behavior:'smooth'})}})};if(j.scripts[j.idx])output(j.scripts[j.idx])}
 async function copy(v){try{await navigator.clipboard.writeText(v);say('Copiado.')}catch{say('Selecione o texto e copie manualmente.')}} 
 function output(s){const parts=[s.cenas.map(c=>c.tempo+' · '+c.imagem+'\n'+c.fala).join('\n\n')+'\n\n'+s.legenda,s.frase,s.descricao,s.frase+'\n\n'+s.take+'\n\n'+s.descricao];$('output').innerHTML='<div class="result studio"><section class="panel"><span class="meta">Versão 1</span><h2>Vídeo narrado</h2>'+s.cenas.map(c=>'<div class="scene"><span class="badge">'+esc(c.tempo)+'</span><p><b>'+esc(c.imagem)+'</b></p><p>'+esc(c.fala)+'</p></div>').join('')+'<h3>Descrição</h3><p class="content">'+esc(s.legenda)+'</p><button data-part="0">Copiar roteiro e descrição</button></section><section class="panel"><span class="meta">Versão 2</span><h2>Frase na tela</h2><h3>'+esc(s.frase)+'</h3><button data-part="1">Copiar frase</button><h3>O que gravar</h3><p>'+esc(s.take)+'</p><h3>Descrição para publicar</h3><p class="content">'+esc(s.descricao)+'</p><button data-part="2">Copiar descrição</button> <button data-part="3">Copiar versão completa</button></section></div>';$('output').onclick=e=>{if(e.target.dataset.part!==undefined)copy(parts[e.target.dataset.part])}}
 function openAuth(mode){authMode=mode;$('atitle').textContent={login:'Entrar',register:'Criar conta',password:'Alterar senha'}[mode];$('autherror').textContent='';$('fields').innerHTML=(mode==='password'?'<label>Senha atual<input type="password" name="old" autocomplete="current-password" required></label>':'<label>E-mail<input type="email" name="email" autocomplete="username" required></label>')+'<label>'+(mode==='password'?'Nova senha':'Senha')+'<input type="password" name="password" minlength="8" maxlength="256" autocomplete="'+(mode==='login'?'current-password':'new-password')+'" required></label>';if(state.hosted&&mode==='register')$('fields').insertAdjacentHTML('beforeend','<label>Código privado do estúdio<input type="password" name="invite" required></label>');$('dialog').showModal()}

@@ -1,866 +1,1010 @@
 [
   {
     "day": 1,
-    "title": "O detalhe que eu só descobri depois",
+    "title": "Morria e não sabia que ___",
     "format": "React",
     "tip": "Pause no detalhe e explique o que o público deve observar.",
     "ref": "DTUwmkCAOCO",
     "examples": [
-      "Eu só descobri isso quando visito um quarto mobiliado.",
-      "Eu só descobri isso quando recorto um retrato para o perfil.",
-      "Eu só descobri isso quando organizo uma planilha de vendas."
-    ]
+      "Morria e não sabia que a posição da porta muda o espaço livre do quarto.",
+      "Morria e não sabia que uma janela pode iluminar o rosto de dois jeitos.",
+      "Morria e não sabia que duas linhas iguais podem ser pedidos diferentes."
+    ],
+    "pattern": "Morria e não sabia que {fact}.",
+    "summary": "Revele um detalhe que costuma passar despercebido e mostre como testá-lo."
   },
   {
     "day": 2,
-    "title": "O que um profissional percebe de primeira",
+    "title": "Coisas que são óbvias pra mim sendo ___, que não são pra você",
     "format": "Trend com texto",
     "tip": "Use uma tomada simples com uma frase curta na tela.",
     "ref": "",
     "examples": [
-      "Quem trabalha com isso percebe na hora quando visito um quarto mobiliado.",
-      "Quem trabalha com isso percebe na hora quando recorto um retrato para o perfil.",
-      "Quem trabalha com isso percebe na hora quando organizo uma planilha de vendas."
-    ]
+      "Quem trabalha com imóveis percebe na hora: a posição da porta muda o espaço livre do quarto.",
+      "Quem trabalha com fotografia percebe na hora: uma janela pode iluminar o rosto de dois jeitos.",
+      "Quem trabalha com análise de dados percebe na hora: duas linhas iguais podem ser pedidos diferentes."
+    ],
+    "pattern": "Quem trabalha com {niche} percebe na hora: {fact}.",
+    "summary": "Compartilhe algo que você aprendeu na profissão e que pode ajudar quem está começando."
   },
   {
     "day": 3,
-    "title": "O detalhe que eu só descobri depois",
+    "title": "Morria e não sabia que ___",
     "format": "Trend com texto",
     "tip": "Use uma tomada simples com uma frase curta na tela.",
     "ref": "",
     "examples": [
-      "Eu só descobri isso quando visito um quarto mobiliado.",
-      "Eu só descobri isso quando recorto um retrato para o perfil.",
-      "Eu só descobri isso quando organizo uma planilha de vendas."
-    ]
+      "Morria e não sabia que a posição da porta muda o espaço livre do quarto.",
+      "Morria e não sabia que uma janela pode iluminar o rosto de dois jeitos.",
+      "Morria e não sabia que duas linhas iguais podem ser pedidos diferentes."
+    ],
+    "pattern": "Morria e não sabia que {fact}.",
+    "summary": "Revele um detalhe que costuma passar despercebido e mostre como testá-lo."
   },
   {
     "day": 4,
-    "title": "O que um profissional percebe de primeira",
+    "title": "Coisas que são óbvias pra mim sendo ___, que não são pra você",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "",
     "examples": [
-      "Quem trabalha com isso percebe na hora quando visito um quarto mobiliado.",
-      "Quem trabalha com isso percebe na hora quando recorto um retrato para o perfil.",
-      "Quem trabalha com isso percebe na hora quando organizo uma planilha de vendas."
-    ]
+      "Quem trabalha com imóveis percebe na hora: a posição da porta muda o espaço livre do quarto.",
+      "Quem trabalha com fotografia percebe na hora: uma janela pode iluminar o rosto de dois jeitos.",
+      "Quem trabalha com análise de dados percebe na hora: duas linhas iguais podem ser pedidos diferentes."
+    ],
+    "pattern": "Quem trabalha com {niche} percebe na hora: {fact}.",
+    "summary": "Compartilhe algo que você aprendeu na profissão e que pode ajudar quem está começando."
   },
   {
     "day": 5,
-    "title": "Por que quase ninguém fala disso?",
+    "title": "Por que ninguém está falando que ___",
     "format": "Vídeo narrado",
     "tip": "Narre enquanto mostra cada etapa em ação.",
     "ref": "DUdcR0gESGO",
     "examples": [
-      "Por que quase ninguém fala sobre o que acontece quando visito um quarto mobiliado?",
-      "Por que quase ninguém fala sobre o que acontece quando recorto um retrato para o perfil?",
-      "Por que quase ninguém fala sobre o que acontece quando organizo uma planilha de vendas?"
-    ]
+      "Por que ninguém está falando que a posição da porta muda o espaço livre do quarto?",
+      "Por que ninguém está falando que uma janela pode iluminar o rosto de dois jeitos?",
+      "Por que ninguém está falando que duas linhas iguais podem ser pedidos diferentes?"
+    ],
+    "pattern": "Por que ninguém está falando que {fact}?",
+    "summary": "Traga um assunto pouco comentado e explique por que merece atenção."
   },
   {
     "day": 6,
-    "title": "O que um profissional percebe de primeira",
+    "title": "Coisas que são óbvias pra mim sendo ___, que não são pra você",
     "format": "Lista",
     "tip": "Organize os pontos em uma sequência fácil de salvar.",
     "ref": "",
     "examples": [
-      "Quem trabalha com isso percebe na hora quando visito um quarto mobiliado.",
-      "Quem trabalha com isso percebe na hora quando recorto um retrato para o perfil.",
-      "Quem trabalha com isso percebe na hora quando organizo uma planilha de vendas."
-    ]
+      "Quem trabalha com imóveis percebe na hora: a posição da porta muda o espaço livre do quarto.",
+      "Quem trabalha com fotografia percebe na hora: uma janela pode iluminar o rosto de dois jeitos.",
+      "Quem trabalha com análise de dados percebe na hora: duas linhas iguais podem ser pedidos diferentes."
+    ],
+    "pattern": "Quem trabalha com {niche} percebe na hora: {fact}.",
+    "summary": "Compartilhe algo que você aprendeu na profissão e que pode ajudar quem está começando."
   },
   {
     "day": 7,
-    "title": "Por que quase ninguém fala disso?",
+    "title": "Por que ninguém está falando que ___",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "",
     "examples": [
-      "Por que quase ninguém fala sobre o que acontece quando visito um quarto mobiliado?",
-      "Por que quase ninguém fala sobre o que acontece quando recorto um retrato para o perfil?",
-      "Por que quase ninguém fala sobre o que acontece quando organizo uma planilha de vendas?"
-    ]
+      "Por que ninguém está falando que a posição da porta muda o espaço livre do quarto?",
+      "Por que ninguém está falando que uma janela pode iluminar o rosto de dois jeitos?",
+      "Por que ninguém está falando que duas linhas iguais podem ser pedidos diferentes?"
+    ],
+    "pattern": "Por que ninguém está falando que {fact}?",
+    "summary": "Traga um assunto pouco comentado e explique por que merece atenção."
   },
   {
     "day": 8,
-    "title": "O que passei a estranhar depois de trabalhar na área",
+    "title": "Coisas que eu acho estranhas sobre X agora que eu faço Y",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DXFO3tWmBEB",
     "examples": [
-      "Depois que comecei a trabalhar na área, passei a estranhar quando visito um quarto mobiliado.",
-      "Depois que comecei a trabalhar na área, passei a estranhar quando recorto um retrato para o perfil.",
-      "Depois que comecei a trabalhar na área, passei a estranhar quando organizo uma planilha de vendas."
-    ]
+      "Depois de trabalhar com imóveis, passei a reparar em a circulação no quarto.",
+      "Depois de trabalhar com fotografia, passei a reparar em a luz do retrato.",
+      "Depois de trabalhar com análise de dados, passei a reparar em as duplicatas da planilha."
+    ],
+    "pattern": "Depois de trabalhar com {niche}, passei a reparar em {topic}.",
+    "summary": "Mostre uma situação cotidiana que passou a chamar sua atenção depois de ganhar experiência."
   },
   {
     "day": 9,
-    "title": "Frases comuns que escondem um problema",
+    "title": "Falas do(a) ___ que podem gerar/causar ___",
     "format": "Trend com texto",
     "tip": "Use uma tomada simples com uma frase curta na tela.",
     "ref": "DUikO99kY_l",
     "examples": [
-      "Quando alguém diz “essa cama cabe aqui?”, eu costumo fazer mais uma pergunta.",
-      "Quando alguém diz “o rosto continua nítido?”, eu costumo fazer mais uma pergunta.",
-      "Quando alguém diz “esse pedido entrou duas vezes?”, eu costumo fazer mais uma pergunta."
-    ]
+      "Quando alguém diz “é só um detalhe”, eu mostro a circulação no quarto.",
+      "Quando alguém diz “é só um detalhe”, eu mostro a luz do retrato.",
+      "Quando alguém diz “é só um detalhe”, eu mostro as duplicatas da planilha."
+    ],
+    "pattern": "Quando alguém diz “é só um detalhe”, eu mostro {topic}.",
+    "summary": "Reproduza uma frase comum e mostre a consequência que ela pode esconder."
   },
   {
     "day": 10,
-    "title": "Parecem iguais até você olhar de perto",
+    "title": "Parece igual, mas não é: ___",
     "format": "Conversa",
     "tip": "Encene uma pergunta e uma resposta em dois planos.",
     "ref": "DEXabGqOa_5",
     "examples": [
-      "Parece a mesma coisa, até o momento em que visito um quarto mobiliado.",
-      "Parece a mesma coisa, até o momento em que recorto um retrato para o perfil.",
-      "Parece a mesma coisa, até o momento em que organizo uma planilha de vendas."
-    ]
+      "Parece igual até você testar a circulação no quarto.",
+      "Parece igual até você testar a luz do retrato.",
+      "Parece igual até você testar as duplicatas da planilha."
+    ],
+    "pattern": "Parece igual até você testar {topic}.",
+    "summary": "Coloque duas situações parecidas lado a lado e revele a diferença que muda a decisão."
   },
   {
     "day": 11,
-    "title": "Frases comuns que escondem um problema",
+    "title": "Falas do(a) ___ que podem gerar/causar ___",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "",
     "examples": [
-      "Quando alguém diz “essa cama cabe aqui?”, eu costumo fazer mais uma pergunta.",
-      "Quando alguém diz “o rosto continua nítido?”, eu costumo fazer mais uma pergunta.",
-      "Quando alguém diz “esse pedido entrou duas vezes?”, eu costumo fazer mais uma pergunta."
-    ]
+      "Quando alguém diz “é só um detalhe”, eu mostro a circulação no quarto.",
+      "Quando alguém diz “é só um detalhe”, eu mostro a luz do retrato.",
+      "Quando alguém diz “é só um detalhe”, eu mostro as duplicatas da planilha."
+    ],
+    "pattern": "Quando alguém diz “é só um detalhe”, eu mostro {topic}.",
+    "summary": "Reproduza uma frase comum e mostre a consequência que ela pode esconder."
   },
   {
     "day": 12,
-    "title": "Parecem iguais até você olhar de perto",
+    "title": "Parece igual, mas não é: ___",
     "format": "Vídeo narrado",
     "tip": "Narre enquanto mostra cada etapa em ação.",
     "ref": "",
     "examples": [
-      "Parece a mesma coisa, até o momento em que visito um quarto mobiliado.",
-      "Parece a mesma coisa, até o momento em que recorto um retrato para o perfil.",
-      "Parece a mesma coisa, até o momento em que organizo uma planilha de vendas."
-    ]
+      "Parece igual até você testar a circulação no quarto.",
+      "Parece igual até você testar a luz do retrato.",
+      "Parece igual até você testar as duplicatas da planilha."
+    ],
+    "pattern": "Parece igual até você testar {topic}.",
+    "summary": "Coloque duas situações parecidas lado a lado e revele a diferença que muda a decisão."
   },
   {
     "day": 13,
-    "title": "Um problema, uma solução demonstrada",
+    "title": "Problema / Solução",
     "format": "Tela dividida",
     "tip": "Mostre o problema de um lado e a mudança do outro.",
     "ref": "",
     "examples": [
-      "Quando visito um quarto mobiliado, aqui está a primeira coisa que eu testo.",
-      "Quando recorto um retrato para o perfil, aqui está a primeira coisa que eu testo.",
-      "Quando organizo uma planilha de vendas, aqui está a primeira coisa que eu testo."
-    ]
+      "Tem uma dúvida sobre a circulação no quarto? Vamos resolver com um teste simples.",
+      "Tem uma dúvida sobre a luz do retrato? Vamos resolver com um teste simples.",
+      "Tem uma dúvida sobre as duplicatas da planilha? Vamos resolver com um teste simples."
+    ],
+    "pattern": "Tem uma dúvida sobre {topic}? Vamos resolver com um teste simples.",
+    "summary": "Apresente uma dificuldade reconhecível e demonstre a solução."
   },
   {
     "day": 14,
-    "title": "Parecem iguais até você olhar de perto",
+    "title": "Parece igual, mas não é: ___",
     "format": "Comparativo",
     "tip": "Aplique o mesmo critério a duas opções.",
     "ref": "DVYT9_xEYhy",
     "examples": [
-      "Parece a mesma coisa, até o momento em que visito um quarto mobiliado.",
-      "Parece a mesma coisa, até o momento em que recorto um retrato para o perfil.",
-      "Parece a mesma coisa, até o momento em que organizo uma planilha de vendas."
-    ]
+      "Parece igual até você testar a circulação no quarto.",
+      "Parece igual até você testar a luz do retrato.",
+      "Parece igual até você testar as duplicatas da planilha."
+    ],
+    "pattern": "Parece igual até você testar {topic}.",
+    "summary": "Coloque duas situações parecidas lado a lado e revele a diferença que muda a decisão."
   },
   {
     "day": 15,
-    "title": "Um problema, uma solução demonstrada",
+    "title": "Problema / Solução",
     "format": "Conversa",
     "tip": "Encene uma pergunta e uma resposta em dois planos.",
     "ref": "",
     "examples": [
-      "Quando visito um quarto mobiliado, aqui está a primeira coisa que eu testo.",
-      "Quando recorto um retrato para o perfil, aqui está a primeira coisa que eu testo.",
-      "Quando organizo uma planilha de vendas, aqui está a primeira coisa que eu testo."
-    ]
+      "Tem uma dúvida sobre a circulação no quarto? Vamos resolver com um teste simples.",
+      "Tem uma dúvida sobre a luz do retrato? Vamos resolver com um teste simples.",
+      "Tem uma dúvida sobre as duplicatas da planilha? Vamos resolver com um teste simples."
+    ],
+    "pattern": "Tem uma dúvida sobre {topic}? Vamos resolver com um teste simples.",
+    "summary": "Apresente uma dificuldade reconhecível e demonstre a solução."
   },
   {
     "day": 16,
-    "title": "O que levei anos para entender",
+    "title": "Eu demorei ___ pra aprender isso e vou te ensinar em ___",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DRX1K3YgRWm",
     "examples": [
-      "Levei anos pra aprender o que conferir quando visito um quarto mobiliado.",
-      "Levei anos pra aprender o que conferir quando recorto um retrato para o perfil.",
-      "Levei anos pra aprender o que conferir quando organizo uma planilha de vendas."
-    ]
+      "Levei tempo para perceber que a posição da porta muda o espaço livre do quarto. Vou te mostrar em segundos.",
+      "Levei tempo para perceber que uma janela pode iluminar o rosto de dois jeitos. Vou te mostrar em segundos.",
+      "Levei tempo para perceber que duas linhas iguais podem ser pedidos diferentes. Vou te mostrar em segundos."
+    ],
+    "pattern": "Levei tempo para perceber que {fact}. Vou te mostrar em segundos.",
+    "summary": "Transforme uma lição demorada em uma explicação curta e aplicável."
   },
   {
     "day": 17,
-    "title": "Por que você sempre volta a isso?",
+    "title": "Eu vou te explicar por que você fica obcecado ou viciado em X",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DY2EVICxg_o",
     "examples": [
-      "Por que você sempre volta à mesma dúvida quando visito um quarto mobiliado?",
-      "Por que você sempre volta à mesma dúvida quando recorto um retrato para o perfil?",
-      "Por que você sempre volta à mesma dúvida quando organizo uma planilha de vendas?"
-    ]
+      "Por que a gente volta tantas vezes à mesma dúvida sobre a circulação no quarto?",
+      "Por que a gente volta tantas vezes à mesma dúvida sobre a luz do retrato?",
+      "Por que a gente volta tantas vezes à mesma dúvida sobre as duplicatas da planilha?"
+    ],
+    "pattern": "Por que a gente volta tantas vezes à mesma dúvida sobre {topic}?",
+    "summary": "Investigue o que faz uma pessoa voltar sempre à mesma dúvida."
   },
   {
     "day": 18,
-    "title": "O que levei anos para entender",
+    "title": "Eu demorei ___ pra aprender isso e vou te ensinar em ___",
     "format": "Trend com texto",
     "tip": "Use uma tomada simples com uma frase curta na tela.",
     "ref": "DDhRz6BxrER",
     "examples": [
-      "Levei anos pra aprender o que conferir quando visito um quarto mobiliado.",
-      "Levei anos pra aprender o que conferir quando recorto um retrato para o perfil.",
-      "Levei anos pra aprender o que conferir quando organizo uma planilha de vendas."
-    ]
+      "Levei tempo para perceber que a posição da porta muda o espaço livre do quarto. Vou te mostrar em segundos.",
+      "Levei tempo para perceber que uma janela pode iluminar o rosto de dois jeitos. Vou te mostrar em segundos.",
+      "Levei tempo para perceber que duas linhas iguais podem ser pedidos diferentes. Vou te mostrar em segundos."
+    ],
+    "pattern": "Levei tempo para perceber que {fact}. Vou te mostrar em segundos.",
+    "summary": "Transforme uma lição demorada em uma explicação curta e aplicável."
   },
   {
     "day": 19,
-    "title": "Uma escolha que eu faria diferente",
+    "title": "Fiz no(a) ___ e me arrependo",
     "format": "Trend com texto",
     "tip": "Use uma tomada simples com uma frase curta na tela.",
     "ref": "DVJOHsQDfpw",
     "examples": [
-      "Se eu pudesse voltar ao dia em que visito um quarto mobiliado, faria uma coisa diferente.",
-      "Se eu pudesse voltar ao dia em que recorto um retrato para o perfil, faria uma coisa diferente.",
-      "Se eu pudesse voltar ao dia em que organizo uma planilha de vendas, faria uma coisa diferente."
-    ]
+      "Um erro que eu evitaria hoje: decidir sem conferir a circulação no quarto.",
+      "Um erro que eu evitaria hoje: decidir sem conferir a luz do retrato.",
+      "Um erro que eu evitaria hoje: decidir sem conferir as duplicatas da planilha."
+    ],
+    "pattern": "Um erro que eu evitaria hoje: decidir sem conferir {topic}.",
+    "summary": "Conte uma escolha que faria diferente e o motivo."
   },
   {
     "day": 20,
-    "title": "Se eu recomeçasse hoje",
+    "title": "Se eu tivesse ___ hoje, eu faria isso",
     "format": "Vídeo narrado",
     "tip": "Narre enquanto mostra cada etapa em ação.",
     "ref": "DXPCZTGGleF",
     "examples": [
-      "Se eu começasse hoje, minha primeira pergunta seria “essa cama cabe aqui?”.",
-      "Se eu começasse hoje, minha primeira pergunta seria “o rosto continua nítido?”.",
-      "Se eu começasse hoje, minha primeira pergunta seria “esse pedido entrou duas vezes?”."
-    ]
+      "Se eu tivesse que decidir sobre a circulação no quarto hoje, começaria por aqui.",
+      "Se eu tivesse que decidir sobre a luz do retrato hoje, começaria por aqui.",
+      "Se eu tivesse que decidir sobre as duplicatas da planilha hoje, começaria por aqui."
+    ],
+    "pattern": "Se eu tivesse que decidir sobre {topic} hoje, começaria por aqui.",
+    "summary": "Mostre por onde começaria se precisasse tomar a decisão hoje."
   },
   {
     "day": 21,
-    "title": "Da primeira tentativa ao resultado",
+    "title": "Como eu fui de ___ pra ___ em ___",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "",
     "examples": [
-      "Da dúvida “essa cama cabe aqui?” à decisão final: veja o que mudou.",
-      "Da dúvida “o rosto continua nítido?” à decisão final: veja o que mudou.",
-      "Da dúvida “esse pedido entrou duas vezes?” à decisão final: veja o que mudou."
-    ]
+      "De uma dúvida a uma decisão: o teste que faço com a circulação no quarto.",
+      "De uma dúvida a uma decisão: o teste que faço com a luz do retrato.",
+      "De uma dúvida a uma decisão: o teste que faço com as duplicatas da planilha."
+    ],
+    "pattern": "De uma dúvida a uma decisão: o teste que faço com {topic}.",
+    "summary": "Conte a transformação em ordem: ponto de partida, ação e resultado."
   },
   {
     "day": 22,
-    "title": "Se eu recomeçasse hoje",
+    "title": "Se eu tivesse ___ hoje, eu faria isso",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DUNn6J5jkPz",
     "examples": [
-      "Se eu começasse hoje, minha primeira pergunta seria “essa cama cabe aqui?”.",
-      "Se eu começasse hoje, minha primeira pergunta seria “o rosto continua nítido?”.",
-      "Se eu começasse hoje, minha primeira pergunta seria “esse pedido entrou duas vezes?”."
-    ]
+      "Se eu tivesse que decidir sobre a circulação no quarto hoje, começaria por aqui.",
+      "Se eu tivesse que decidir sobre a luz do retrato hoje, começaria por aqui.",
+      "Se eu tivesse que decidir sobre as duplicatas da planilha hoje, começaria por aqui."
+    ],
+    "pattern": "Se eu tivesse que decidir sobre {topic} hoje, começaria por aqui.",
+    "summary": "Mostre por onde começaria se precisasse tomar a decisão hoje."
   },
   {
     "day": 23,
-    "title": "Da primeira tentativa ao resultado",
+    "title": "Como eu fui de ___ pra ___ em ___",
     "format": "Vídeo narrado",
     "tip": "Narre enquanto mostra cada etapa em ação.",
     "ref": "",
     "examples": [
-      "Da dúvida “essa cama cabe aqui?” à decisão final: veja o que mudou.",
-      "Da dúvida “o rosto continua nítido?” à decisão final: veja o que mudou.",
-      "Da dúvida “esse pedido entrou duas vezes?” à decisão final: veja o que mudou."
-    ]
+      "De uma dúvida a uma decisão: o teste que faço com a circulação no quarto.",
+      "De uma dúvida a uma decisão: o teste que faço com a luz do retrato.",
+      "De uma dúvida a uma decisão: o teste que faço com as duplicatas da planilha."
+    ],
+    "pattern": "De uma dúvida a uma decisão: o teste que faço com {topic}.",
+    "summary": "Conte a transformação em ordem: ponto de partida, ação e resultado."
   },
   {
     "day": 24,
-    "title": "Cinco escolhas que atrapalham seu resultado",
+    "title": "Top 5 piores ___ para seu ___",
     "format": "Lista",
     "tip": "Organize os pontos em uma sequência fácil de salvar.",
     "ref": "DYvEYPKJYAs",
     "examples": [
-      "Cinco escolhas que atrapalham quando visito um quarto mobiliado.",
-      "Cinco escolhas que atrapalham quando recorto um retrato para o perfil.",
-      "Cinco escolhas que atrapalham quando organizo uma planilha de vendas."
-    ]
+      "Cinco erros que eu evitaria ao avaliar a circulação no quarto.",
+      "Cinco erros que eu evitaria ao avaliar a luz do retrato.",
+      "Cinco erros que eu evitaria ao avaliar as duplicatas da planilha."
+    ],
+    "pattern": "Cinco erros que eu evitaria ao avaliar {topic}.",
+    "summary": "Organize cinco erros do cotidiano e explique como reconhecer cada um."
   },
   {
     "day": 25,
-    "title": "Regras que pouca gente conhece",
+    "title": "Algumas leis de X que provavelmente você não sabia",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "Dad33AjhA7S",
     "examples": [
-      "Tem uma regra prática que eu uso sempre que visito um quarto mobiliado.",
-      "Tem uma regra prática que eu uso sempre que recorto um retrato para o perfil.",
-      "Tem uma regra prática que eu uso sempre que organizo uma planilha de vendas."
-    ]
+      "Uma regra prática que sigo quando avalio a circulação no quarto.",
+      "Uma regra prática que sigo quando avalio a luz do retrato.",
+      "Uma regra prática que sigo quando avalio as duplicatas da planilha."
+    ],
+    "pattern": "Uma regra prática que sigo quando avalio {topic}.",
+    "summary": "Explique uma regra prática que orienta suas escolhas."
   },
   {
     "day": 26,
-    "title": "Meu primeiro passo para chegar lá",
+    "title": "Coisas que eu faria hoje se quisesse ___",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DXMwcGxkY2V",
     "examples": [
-      "Quer saber se “essa cama cabe aqui?”? Comece por este teste.",
-      "Quer saber se “o rosto continua nítido?”? Comece por este teste.",
-      "Quer saber se “esse pedido entrou duas vezes?”? Comece por este teste."
-    ]
+      "O que eu faria hoje para entender melhor a circulação no quarto.",
+      "O que eu faria hoje para entender melhor a luz do retrato.",
+      "O que eu faria hoje para entender melhor as duplicatas da planilha."
+    ],
+    "pattern": "O que eu faria hoje para entender melhor {topic}.",
+    "summary": "Indique a primeira ação para quem tem um objetivo claro."
   },
   {
     "day": 27,
-    "title": "Um desafio para os próximos dias",
+    "title": "___ dias ___ [assunto do nicho]",
     "format": "Vídeo narrado",
     "tip": "Narre enquanto mostra cada etapa em ação.",
     "ref": "",
     "examples": [
-      "Dia um testando o que acontece quando visito um quarto mobiliado.",
-      "Dia um testando o que acontece quando recorto um retrato para o perfil.",
-      "Dia um testando o que acontece quando organizo uma planilha de vendas."
-    ]
+      "Dia um de um desafio simples: testar a circulação no quarto na prática.",
+      "Dia um de um desafio simples: testar a luz do retrato na prática.",
+      "Dia um de um desafio simples: testar as duplicatas da planilha na prática."
+    ],
+    "pattern": "Dia um de um desafio simples: testar {topic} na prática.",
+    "summary": "Escolha uma experiência que possa ser acompanhada dia a dia."
   },
   {
     "day": 28,
-    "title": "Meu primeiro passo para chegar lá",
+    "title": "Coisas que eu faria hoje se quisesse ___",
     "format": "Trend com texto",
     "tip": "Use uma tomada simples com uma frase curta na tela.",
     "ref": "DSTlQ_ljBUE",
     "examples": [
-      "Quer saber se “essa cama cabe aqui?”? Comece por este teste.",
-      "Quer saber se “o rosto continua nítido?”? Comece por este teste.",
-      "Quer saber se “esse pedido entrou duas vezes?”? Comece por este teste."
-    ]
+      "O que eu faria hoje para entender melhor a circulação no quarto.",
+      "O que eu faria hoje para entender melhor a luz do retrato.",
+      "O que eu faria hoje para entender melhor as duplicatas da planilha."
+    ],
+    "pattern": "O que eu faria hoje para entender melhor {topic}.",
+    "summary": "Indique a primeira ação para quem tem um objetivo claro."
   },
   {
     "day": 29,
-    "title": "O básico que ainda merece atenção",
+    "title": "O óbvio precisa ser dito: ___",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "",
     "examples": [
-      "Vale repetir o básico: antes de perguntar “essa cama cabe aqui?”, olhe isto.",
-      "Vale repetir o básico: antes de perguntar “o rosto continua nítido?”, olhe isto.",
-      "Vale repetir o básico: antes de perguntar “esse pedido entrou duas vezes?”, olhe isto."
-    ]
+      "O óbvio precisa ser dito: a posição da porta muda o espaço livre do quarto.",
+      "O óbvio precisa ser dito: uma janela pode iluminar o rosto de dois jeitos.",
+      "O óbvio precisa ser dito: duas linhas iguais podem ser pedidos diferentes."
+    ],
+    "pattern": "O óbvio precisa ser dito: {fact}.",
+    "summary": "Mostre um cuidado básico que costuma ser esquecido."
   },
   {
     "day": 30,
-    "title": "Meu primeiro passo para chegar lá",
+    "title": "Coisas que eu faria hoje se quisesse ___",
     "format": "Vídeo na tela",
     "tip": "Aponte na tela o detalhe que sustenta sua explicação.",
     "ref": "DV6JK4-DTSS",
     "examples": [
-      "Quer saber se “essa cama cabe aqui?”? Comece por este teste.",
-      "Quer saber se “o rosto continua nítido?”? Comece por este teste.",
-      "Quer saber se “esse pedido entrou duas vezes?”? Comece por este teste."
-    ]
+      "O que eu faria hoje para entender melhor a circulação no quarto.",
+      "O que eu faria hoje para entender melhor a luz do retrato.",
+      "O que eu faria hoje para entender melhor as duplicatas da planilha."
+    ],
+    "pattern": "O que eu faria hoje para entender melhor {topic}.",
+    "summary": "Indique a primeira ação para quem tem um objetivo claro."
   },
   {
     "day": 31,
-    "title": "Um desafio para os próximos dias",
+    "title": "___ dias ___ [assunto do nicho]",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "",
     "examples": [
-      "Dia um testando o que acontece quando visito um quarto mobiliado.",
-      "Dia um testando o que acontece quando recorto um retrato para o perfil.",
-      "Dia um testando o que acontece quando organizo uma planilha de vendas."
-    ]
+      "Dia um de um desafio simples: testar a circulação no quarto na prática.",
+      "Dia um de um desafio simples: testar a luz do retrato na prática.",
+      "Dia um de um desafio simples: testar as duplicatas da planilha na prática."
+    ],
+    "pattern": "Dia um de um desafio simples: testar {topic} na prática.",
+    "summary": "Escolha uma experiência que possa ser acompanhada dia a dia."
   },
   {
     "day": 32,
-    "title": "O que passa no meu teste?",
+    "title": "Aprova ou reprova",
     "format": "Comparativo",
     "tip": "Aplique o mesmo critério a duas opções.",
     "ref": "DWrkvjHEUZC",
     "examples": [
-      "Passa ou não passa no teste de hoje: “essa cama cabe aqui?”?",
-      "Passa ou não passa no teste de hoje: “o rosto continua nítido?”?",
-      "Passa ou não passa no teste de hoje: “esse pedido entrou duas vezes?”?"
-    ]
+      "Aprova ou reprova? Meu critério para avaliar a circulação no quarto.",
+      "Aprova ou reprova? Meu critério para avaliar a luz do retrato.",
+      "Aprova ou reprova? Meu critério para avaliar as duplicatas da planilha."
+    ],
+    "pattern": "Aprova ou reprova? Meu critério para avaliar {topic}.",
+    "summary": "Apresente uma situação, escolha um critério e dê seu veredito."
   },
   {
     "day": 33,
-    "title": "Hábitos que merecem nota dez",
+    "title": "Hábitos 10/10 pra conseguir X",
     "format": "Lista",
     "tip": "Organize os pontos em uma sequência fácil de salvar.",
     "ref": "DbTzA3jKbWZ",
     "examples": [
-      "Três hábitos que facilitam minha vida quando visito um quarto mobiliado.",
-      "Três hábitos que facilitam minha vida quando recorto um retrato para o perfil.",
-      "Três hábitos que facilitam minha vida quando organizo uma planilha de vendas."
-    ]
+      "Um hábito dez de dez para quem precisa avaliar a circulação no quarto.",
+      "Um hábito dez de dez para quem precisa avaliar a luz do retrato.",
+      "Um hábito dez de dez para quem precisa avaliar as duplicatas da planilha."
+    ],
+    "pattern": "Um hábito dez de dez para quem precisa avaliar {topic}.",
+    "summary": "Mostre um hábito fácil de incorporar na rotina."
   },
   {
     "day": 34,
-    "title": "Três opções em ordem de preferência",
+    "title": "Esse é ótimo, esse é bom e esse é melhor evitar",
     "format": "Comparativo",
     "tip": "Aplique o mesmo critério a duas opções.",
     "ref": "DXsFcE1ijYE",
     "examples": [
-      "Quando visito um quarto mobiliado, eu colocaria estas três opções nessa ordem.",
-      "Quando recorto um retrato para o perfil, eu colocaria estas três opções nessa ordem.",
-      "Quando organizo uma planilha de vendas, eu colocaria estas três opções nessa ordem."
-    ]
+      "Ótimo, aceitável ou melhor evitar? Meu teste para a circulação no quarto.",
+      "Ótimo, aceitável ou melhor evitar? Meu teste para a luz do retrato.",
+      "Ótimo, aceitável ou melhor evitar? Meu teste para as duplicatas da planilha."
+    ],
+    "pattern": "Ótimo, aceitável ou melhor evitar? Meu teste para {topic}.",
+    "summary": "Classifique as opções e explique o critério que definiu a ordem."
   },
   {
     "day": 35,
-    "title": "Antes de responder a esse pedido",
+    "title": "Quando alguém te pedir ___, faça isso antes",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DXKszt1kT2x",
     "examples": [
-      "Antes de responder “essa cama cabe aqui?”, preciso conferir um detalhe.",
-      "Antes de responder “o rosto continua nítido?”, preciso conferir um detalhe.",
-      "Antes de responder “esse pedido entrou duas vezes?”, preciso conferir um detalhe."
-    ]
+      "Quando pedirem sua opinião sobre a circulação no quarto, faça este teste antes.",
+      "Quando pedirem sua opinião sobre a luz do retrato, faça este teste antes.",
+      "Quando pedirem sua opinião sobre as duplicatas da planilha, faça este teste antes."
+    ],
+    "pattern": "Quando pedirem sua opinião sobre {topic}, faça este teste antes.",
+    "summary": "Compartilhe a verificação que faz antes de atender a um pedido."
   },
   {
     "day": 36,
-    "title": "Três opções em ordem de preferência",
+    "title": "Esse é ótimo, esse é bom e esse é melhor evitar",
     "format": "Trend com texto",
     "tip": "Use uma tomada simples com uma frase curta na tela.",
     "ref": "DVHlMGoibN8",
     "examples": [
-      "Quando visito um quarto mobiliado, eu colocaria estas três opções nessa ordem.",
-      "Quando recorto um retrato para o perfil, eu colocaria estas três opções nessa ordem.",
-      "Quando organizo uma planilha de vendas, eu colocaria estas três opções nessa ordem."
-    ]
+      "Ótimo, aceitável ou melhor evitar? Meu teste para a circulação no quarto.",
+      "Ótimo, aceitável ou melhor evitar? Meu teste para a luz do retrato.",
+      "Ótimo, aceitável ou melhor evitar? Meu teste para as duplicatas da planilha."
+    ],
+    "pattern": "Ótimo, aceitável ou melhor evitar? Meu teste para {topic}.",
+    "summary": "Classifique as opções e explique o critério que definiu a ordem."
   },
   {
     "day": 37,
-    "title": "Deslizes comuns de quem está começando",
+    "title": "___ erros de iniciantes em ___",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "",
     "examples": [
-      "Meu primeiro erro quando visito um quarto mobiliado foi pular este passo.",
-      "Meu primeiro erro quando recorto um retrato para o perfil foi pular este passo.",
-      "Meu primeiro erro quando organizo uma planilha de vendas foi pular este passo."
-    ]
+      "Um erro de iniciante que dá para evitar ao avaliar a circulação no quarto.",
+      "Um erro de iniciante que dá para evitar ao avaliar a luz do retrato.",
+      "Um erro de iniciante que dá para evitar ao avaliar as duplicatas da planilha."
+    ],
+    "pattern": "Um erro de iniciante que dá para evitar ao avaliar {topic}.",
+    "summary": "Revele um erro frequente de iniciante e mostre como percebê-lo."
   },
   {
     "day": 38,
-    "title": "O mesmo trabalho com dois resultados",
+    "title": "Resultado bom vs resultado ruim",
     "format": "Clone",
     "tip": "Represente duas perspectivas na mesma cena.",
     "ref": "DYA95C2Aw3h",
     "examples": [
-      "Veja a diferença entre dois resultados quando visito um quarto mobiliado.",
-      "Veja a diferença entre dois resultados quando recorto um retrato para o perfil.",
-      "Veja a diferença entre dois resultados quando organizo uma planilha de vendas."
-    ]
+      "O mesmo problema, dois resultados: olha a diferença em a circulação no quarto.",
+      "O mesmo problema, dois resultados: olha a diferença em a luz do retrato.",
+      "O mesmo problema, dois resultados: olha a diferença em as duplicatas da planilha."
+    ],
+    "pattern": "O mesmo problema, dois resultados: olha a diferença em {topic}.",
+    "summary": "Mostre como duas formas de fazer a mesma tarefa mudam o resultado."
   },
   {
     "day": 39,
-    "title": "Deslizes comuns de quem está começando",
+    "title": "___ erros de iniciantes em ___",
     "format": "Comparativo",
     "tip": "Aplique o mesmo critério a duas opções.",
     "ref": "",
     "examples": [
-      "Meu primeiro erro quando visito um quarto mobiliado foi pular este passo.",
-      "Meu primeiro erro quando recorto um retrato para o perfil foi pular este passo.",
-      "Meu primeiro erro quando organizo uma planilha de vendas foi pular este passo."
-    ]
+      "Um erro de iniciante que dá para evitar ao avaliar a circulação no quarto.",
+      "Um erro de iniciante que dá para evitar ao avaliar a luz do retrato.",
+      "Um erro de iniciante que dá para evitar ao avaliar as duplicatas da planilha."
+    ],
+    "pattern": "Um erro de iniciante que dá para evitar ao avaliar {topic}.",
+    "summary": "Revele um erro frequente de iniciante e mostre como percebê-lo."
   },
   {
     "day": 40,
-    "title": "Anos de prática em um minuto",
+    "title": "X anos de Y em um minuto",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DVvvKDykQTv",
     "examples": [
-      "O que anos de prática me ensinaram sobre a pergunta “essa cama cabe aqui?”.",
-      "O que anos de prática me ensinaram sobre a pergunta “o rosto continua nítido?”.",
-      "O que anos de prática me ensinaram sobre a pergunta “esse pedido entrou duas vezes?”."
-    ]
+      "Uma lição de prática sobre a circulação no quarto em menos de um minuto.",
+      "Uma lição de prática sobre a luz do retrato em menos de um minuto.",
+      "Uma lição de prática sobre as duplicatas da planilha em menos de um minuto."
+    ],
+    "pattern": "Uma lição de prática sobre {topic} em menos de um minuto.",
+    "summary": "Resuma uma lição de experiência em uma demonstração rápida."
   },
   {
     "day": 41,
-    "title": "Deslizes comuns de quem está começando",
+    "title": "___ erros de iniciantes em ___",
     "format": "Lista",
     "tip": "Organize os pontos em uma sequência fácil de salvar.",
     "ref": "",
     "examples": [
-      "Meu primeiro erro quando visito um quarto mobiliado foi pular este passo.",
-      "Meu primeiro erro quando recorto um retrato para o perfil foi pular este passo.",
-      "Meu primeiro erro quando organizo uma planilha de vendas foi pular este passo."
-    ]
+      "Um erro de iniciante que dá para evitar ao avaliar a circulação no quarto.",
+      "Um erro de iniciante que dá para evitar ao avaliar a luz do retrato.",
+      "Um erro de iniciante que dá para evitar ao avaliar as duplicatas da planilha."
+    ],
+    "pattern": "Um erro de iniciante que dá para evitar ao avaliar {topic}.",
+    "summary": "Revele um erro frequente de iniciante e mostre como percebê-lo."
   },
   {
     "day": 42,
-    "title": "Uma crença popular posta à prova",
+    "title": "Mito vs Verdade",
     "format": "Comparativo",
     "tip": "Aplique o mesmo critério a duas opções.",
     "ref": "DXexEpNDU-O",
     "examples": [
-      "Todo mundo repete a mesma resposta para “essa cama cabe aqui?”. Vamos testar?",
-      "Todo mundo repete a mesma resposta para “o rosto continua nítido?”. Vamos testar?",
-      "Todo mundo repete a mesma resposta para “esse pedido entrou duas vezes?”. Vamos testar?"
-    ]
+      "Será que basta olhar para avaliar a circulação no quarto? Vamos testar.",
+      "Será que basta olhar para avaliar a luz do retrato? Vamos testar.",
+      "Será que basta olhar para avaliar as duplicatas da planilha? Vamos testar."
+    ],
+    "pattern": "Será que basta olhar para avaliar {topic}? Vamos testar.",
+    "summary": "Teste uma crença popular com um exemplo que o público possa observar."
   },
   {
     "day": 43,
-    "title": "Imagine como seria dar o primeiro passo",
+    "title": "Se você se imaginar fazendo X, Y vai acontecer",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DbRRMdPhfbq",
     "examples": [
-      "Imagine como seria sua primeira tentativa quando visito um quarto mobiliado.",
-      "Imagine como seria sua primeira tentativa quando recorto um retrato para o perfil.",
-      "Imagine como seria sua primeira tentativa quando organizo uma planilha de vendas."
-    ]
+      "Imagine decidir sobre a circulação no quarto depois de ver este teste.",
+      "Imagine decidir sobre a luz do retrato depois de ver este teste.",
+      "Imagine decidir sobre as duplicatas da planilha depois de ver este teste."
+    ],
+    "pattern": "Imagine decidir sobre {topic} depois de ver este teste.",
+    "summary": "Convide a pessoa a se imaginar tomando uma decisão concreta."
   },
   {
     "day": 44,
-    "title": "O que a pessoa ainda não percebeu",
+    "title": "Você/Ele(a) não sabe mas ___",
     "format": "Lista",
     "tip": "Organize os pontos em uma sequência fácil de salvar.",
     "ref": "DWMMMQlkR57",
     "examples": [
-      "O detalhe que quase ninguém percebe quando visito um quarto mobiliado.",
-      "O detalhe que quase ninguém percebe quando recorto um retrato para o perfil.",
-      "O detalhe que quase ninguém percebe quando organizo uma planilha de vendas."
-    ]
+      "Você talvez ainda não tenha percebido que a posição da porta muda o espaço livre do quarto.",
+      "Você talvez ainda não tenha percebido que uma janela pode iluminar o rosto de dois jeitos.",
+      "Você talvez ainda não tenha percebido que duas linhas iguais podem ser pedidos diferentes."
+    ],
+    "pattern": "Você talvez ainda não tenha percebido que {fact}.",
+    "summary": "Revele algo que o personagem ainda não percebeu."
   },
   {
     "day": 45,
-    "title": "O que vem antes do resultado",
+    "title": "Pra você ter ___, você precisa ter/fazer ___",
     "format": "Lofi com imagens",
     "tip": "Alterne sua fala com fotos que ilustrem cada ponto.",
     "ref": "DYVUpvPR1aF",
     "examples": [
-      "Antes de chegar à resposta de “essa cama cabe aqui?”, tem um passo aqui.",
-      "Antes de chegar à resposta de “o rosto continua nítido?”, tem um passo aqui.",
-      "Antes de chegar à resposta de “esse pedido entrou duas vezes?”, tem um passo aqui."
-    ]
+      "Antes de decidir sobre a circulação no quarto, confira uma coisa.",
+      "Antes de decidir sobre a luz do retrato, confira uma coisa.",
+      "Antes de decidir sobre as duplicatas da planilha, confira uma coisa."
+    ],
+    "pattern": "Antes de decidir sobre {topic}, confira uma coisa.",
+    "summary": "Mostre o cuidado que precisa vir antes do resultado esperado."
   },
   {
     "day": 46,
-    "title": "Lições que o trabalho me ensinou",
+    "title": "Coisas que aprendi depois de X anos de trabalho",
     "format": "Lista",
     "tip": "Organize os pontos em uma sequência fácil de salvar.",
     "ref": "C-YqFM7PQt_",
     "examples": [
-      "Três lições que aprendi respondendo “essa cama cabe aqui?” todos os dias.",
-      "Três lições que aprendi respondendo “o rosto continua nítido?” todos os dias.",
-      "Três lições que aprendi respondendo “esse pedido entrou duas vezes?” todos os dias."
-    ]
+      "Uma das coisas que aprendi na prática: a posição da porta muda o espaço livre do quarto.",
+      "Uma das coisas que aprendi na prática: uma janela pode iluminar o rosto de dois jeitos.",
+      "Uma das coisas que aprendi na prática: duas linhas iguais podem ser pedidos diferentes."
+    ],
+    "pattern": "Uma das coisas que aprendi na prática: {fact}.",
+    "summary": "Compartilhe uma lição aprendida no dia a dia da profissão."
   },
   {
     "day": 47,
-    "title": "Um detalhe que preciso compartilhar",
+    "title": "Eu como ___ não posso esconder isso de você",
     "format": "Trend com texto",
     "tip": "Use uma tomada simples com uma frase curta na tela.",
     "ref": "DSDzOTbjha0",
     "examples": [
-      "Quando visito um quarto mobiliado, tem um detalhe que eu faço questão de mostrar.",
-      "Quando recorto um retrato para o perfil, tem um detalhe que eu faço questão de mostrar.",
-      "Quando organizo uma planilha de vendas, tem um detalhe que eu faço questão de mostrar."
-    ]
+      "Trabalho com imóveis e preciso te contar: a posição da porta muda o espaço livre do quarto.",
+      "Trabalho com fotografia e preciso te contar: uma janela pode iluminar o rosto de dois jeitos.",
+      "Trabalho com análise de dados e preciso te contar: duas linhas iguais podem ser pedidos diferentes."
+    ],
+    "pattern": "Trabalho com {niche} e preciso te contar: {fact}.",
+    "summary": "Divida um detalhe dos bastidores que ajuda o público a escolher."
   },
   {
     "day": 48,
-    "title": "O que você perde ao adiar",
+    "title": "Se você não fizer ___ agora, nunca mais vai ter a chance de fazer ___",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DOtLOvXkfZY",
     "examples": [
-      "O que pode passar despercebido se você deixar “essa cama cabe aqui?” para depois?",
-      "O que pode passar despercebido se você deixar “o rosto continua nítido?” para depois?",
-      "O que pode passar despercebido se você deixar “esse pedido entrou duas vezes?” para depois?"
-    ]
+      "Antes de ir embora, reserve um minuto para conferir a circulação no quarto.",
+      "Antes de ir embora, reserve um minuto para conferir a luz do retrato.",
+      "Antes de ir embora, reserve um minuto para conferir as duplicatas da planilha."
+    ],
+    "pattern": "Antes de ir embora, reserve um minuto para conferir {topic}.",
+    "summary": "Mostre o que vale verificar antes de perder a oportunidade."
   },
   {
     "day": 49,
-    "title": "Um detalhe que preciso compartilhar",
+    "title": "Eu como ___ não posso esconder isso de você",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DXE22tPDWB7",
     "examples": [
-      "Quando visito um quarto mobiliado, tem um detalhe que eu faço questão de mostrar.",
-      "Quando recorto um retrato para o perfil, tem um detalhe que eu faço questão de mostrar.",
-      "Quando organizo uma planilha de vendas, tem um detalhe que eu faço questão de mostrar."
-    ]
+      "Trabalho com imóveis e preciso te contar: a posição da porta muda o espaço livre do quarto.",
+      "Trabalho com fotografia e preciso te contar: uma janela pode iluminar o rosto de dois jeitos.",
+      "Trabalho com análise de dados e preciso te contar: duas linhas iguais podem ser pedidos diferentes."
+    ],
+    "pattern": "Trabalho com {niche} e preciso te contar: {fact}.",
+    "summary": "Divida um detalhe dos bastidores que ajuda o público a escolher."
   },
   {
     "day": 50,
-    "title": "Perguntas que sempre chegam até mim",
+    "title": "Coisas que tenho que explicar sendo ___ há ___ anos",
     "format": "Trend com texto",
     "tip": "Use uma tomada simples com uma frase curta na tela.",
     "ref": "DWJafPZjcbk",
     "examples": [
-      "Sempre me fazem a mesma pergunta: “essa cama cabe aqui?”.",
-      "Sempre me fazem a mesma pergunta: “o rosto continua nítido?”.",
-      "Sempre me fazem a mesma pergunta: “esse pedido entrou duas vezes?”."
-    ]
+      "Uma coisa que sempre explico sobre a circulação no quarto: a posição da porta muda o espaço livre do quarto.",
+      "Uma coisa que sempre explico sobre a luz do retrato: uma janela pode iluminar o rosto de dois jeitos.",
+      "Uma coisa que sempre explico sobre as duplicatas da planilha: duas linhas iguais podem ser pedidos diferentes."
+    ],
+    "pattern": "Uma coisa que sempre explico sobre {topic}: {fact}.",
+    "summary": "Responda à dúvida que sempre aparece no atendimento."
   },
   {
     "day": 51,
-    "title": "Qual eu usaria e por quê",
+    "title": "Eu usaria vs não usaria",
     "format": "Comparativo",
     "tip": "Aplique o mesmo critério a duas opções.",
     "ref": "DW4dr8JE6Hk",
     "examples": [
-      "Quando visito um quarto mobiliado, qual destas duas opções eu usaria?",
-      "Quando recorto um retrato para o perfil, qual destas duas opções eu usaria?",
-      "Quando organizo uma planilha de vendas, qual destas duas opções eu usaria?"
-    ]
+      "O que eu usaria para testar a circulação no quarto na prática.",
+      "O que eu usaria para testar a luz do retrato na prática.",
+      "O que eu usaria para testar as duplicatas da planilha na prática."
+    ],
+    "pattern": "O que eu usaria para testar {topic} na prática.",
+    "summary": "Avalie duas alternativas e explique qual escolheria."
   },
   {
     "day": 52,
-    "title": "Perguntas que sempre chegam até mim",
+    "title": "Coisas que tenho que explicar sendo ___ há ___ anos",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "",
     "examples": [
-      "Sempre me fazem a mesma pergunta: “essa cama cabe aqui?”.",
-      "Sempre me fazem a mesma pergunta: “o rosto continua nítido?”.",
-      "Sempre me fazem a mesma pergunta: “esse pedido entrou duas vezes?”."
-    ]
+      "Uma coisa que sempre explico sobre a circulação no quarto: a posição da porta muda o espaço livre do quarto.",
+      "Uma coisa que sempre explico sobre a luz do retrato: uma janela pode iluminar o rosto de dois jeitos.",
+      "Uma coisa que sempre explico sobre as duplicatas da planilha: duas linhas iguais podem ser pedidos diferentes."
+    ],
+    "pattern": "Uma coisa que sempre explico sobre {topic}: {fact}.",
+    "summary": "Responda à dúvida que sempre aparece no atendimento."
   },
   {
     "day": 53,
-    "title": "Uma explicação que até criança entende",
+    "title": "Te explicando ___ como se você fosse uma criança de 8 anos",
     "format": "Vídeo na tela",
     "tip": "Aponte na tela o detalhe que sustenta sua explicação.",
     "ref": "DV1OkYmjWRQ",
     "examples": [
-      "Vou explicar “essa cama cabe aqui?” com um exemplo que cabe na sua mão.",
-      "Vou explicar “o rosto continua nítido?” com um exemplo que cabe na sua mão.",
-      "Vou explicar “esse pedido entrou duas vezes?” com um exemplo que cabe na sua mão."
-    ]
+      "Vou explicar a circulação no quarto com um exemplo que dá para ver.",
+      "Vou explicar a luz do retrato com um exemplo que dá para ver.",
+      "Vou explicar as duplicatas da planilha com um exemplo que dá para ver."
+    ],
+    "pattern": "Vou explicar {topic} com um exemplo que dá para ver.",
+    "summary": "Use um objeto ou uma comparação simples para explicar um assunto difícil."
   },
   {
     "day": 54,
-    "title": "Um conselho para levar consigo",
+    "title": "Conselho que você não pediu, mas eu vou te dar mesmo assim",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DYSBXX1NagN",
     "examples": [
-      "Meu conselho pra quando visito um quarto mobiliado: comece por aqui.",
-      "Meu conselho pra quando recorto um retrato para o perfil: comece por aqui.",
-      "Meu conselho pra quando organizo uma planilha de vendas: comece por aqui."
-    ]
+      "Um conselho que eu daria antes de você decidir sobre a circulação no quarto.",
+      "Um conselho que eu daria antes de você decidir sobre a luz do retrato.",
+      "Um conselho que eu daria antes de você decidir sobre as duplicatas da planilha."
+    ],
+    "pattern": "Um conselho que eu daria antes de você decidir sobre {topic}.",
+    "summary": "Dê um conselho específico que você daria a um amigo."
   },
   {
     "day": 55,
-    "title": "Um pequeno hábito para experimentar",
+    "title": "Pega o hábito de ___",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DaIRxpyO8La",
     "examples": [
-      "Um hábito pequeno que me ajuda toda vez que visito um quarto mobiliado.",
-      "Um hábito pequeno que me ajuda toda vez que recorto um retrato para o perfil.",
-      "Um hábito pequeno que me ajuda toda vez que organizo uma planilha de vendas."
-    ]
+      "Pegue o hábito de conferir a circulação no quarto antes de escolher.",
+      "Pegue o hábito de conferir a luz do retrato antes de escolher.",
+      "Pegue o hábito de conferir as duplicatas da planilha antes de escolher."
+    ],
+    "pattern": "Pegue o hábito de conferir {topic} antes de escolher.",
+    "summary": "Apresente um hábito pequeno e demonstre como começar."
   },
   {
     "day": 56,
-    "title": "Uma frase melhor para essa situação",
+    "title": "Nunca diga ___, diga ___",
     "format": "Comparativo",
     "tip": "Aplique o mesmo critério a duas opções.",
     "ref": "DYKnfVlPM0P",
     "examples": [
-      "Em vez de perguntar “essa cama cabe aqui?”, experimente uma pergunta mais específica.",
-      "Em vez de perguntar “o rosto continua nítido?”, experimente uma pergunta mais específica.",
-      "Em vez de perguntar “esse pedido entrou duas vezes?”, experimente uma pergunta mais específica."
-    ]
+      "Troque “parece bom” por uma pergunta: como eu testo a circulação no quarto?",
+      "Troque “parece bom” por uma pergunta: como eu testo a luz do retrato?",
+      "Troque “parece bom” por uma pergunta: como eu testo as duplicatas da planilha?"
+    ],
+    "pattern": "Troque “parece bom” por uma pergunta: como eu testo {topic}?",
+    "summary": "Reescreva uma frase comum e mostre como a conversa muda."
   },
   {
     "day": 57,
-    "title": "Como eu responderia a essa pergunta",
+    "title": "Quando a ___ te disser ___, não diga ___, fale assim ___",
     "format": "Trend com texto",
     "tip": "Use uma tomada simples com uma frase curta na tela.",
     "ref": "DWMiNqxCeAt",
     "examples": [
-      "Se alguém perguntar “essa cama cabe aqui?”, mostre isso antes de responder.",
-      "Se alguém perguntar “o rosto continua nítido?”, mostre isso antes de responder.",
-      "Se alguém perguntar “esse pedido entrou duas vezes?”, mostre isso antes de responder."
-    ]
+      "Quando perguntarem se está bom, proponha um teste de a circulação no quarto.",
+      "Quando perguntarem se está bom, proponha um teste de a luz do retrato.",
+      "Quando perguntarem se está bom, proponha um teste de as duplicatas da planilha."
+    ],
+    "pattern": "Quando perguntarem se está bom, proponha um teste de {topic}.",
+    "summary": "Encene a pergunta de alguém e dê uma resposta que ajude a avançar."
   },
   {
     "day": 58,
-    "title": "A verdadeira dificuldade está aqui",
+    "title": "A pior prisão não é X, é Y",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "Da8tn7kvdaM",
     "examples": [
-      "O que mais complica quando visito um quarto mobiliado é o detalhe que ninguém mede.",
-      "O que mais complica quando recorto um retrato para o perfil é o detalhe que ninguém mede.",
-      "O que mais complica quando organizo uma planilha de vendas é o detalhe que ninguém mede."
-    ]
+      "O que trava sua decisão sobre a circulação no quarto pode ser a falta de um teste.",
+      "O que trava sua decisão sobre a luz do retrato pode ser a falta de um teste.",
+      "O que trava sua decisão sobre as duplicatas da planilha pode ser a falta de um teste."
+    ],
+    "pattern": "O que trava sua decisão sobre {topic} pode ser a falta de um teste.",
+    "summary": "Identifique o que está dificultando uma decisão."
   },
   {
     "day": 59,
-    "title": "Por que esse trabalho tem um preço",
+    "title": "Infelizmente não vou conseguir fazer de graça esse trabalho que vai ___",
     "format": "Trend com texto",
     "tip": "Use uma tomada simples com uma frase curta na tela.",
     "ref": "DZpLhicRYo1",
     "examples": [
-      "Quanto trabalho existe por trás de uma resposta para “essa cama cabe aqui?”?",
-      "Quanto trabalho existe por trás de uma resposta para “o rosto continua nítido?”?",
-      "Quanto trabalho existe por trás de uma resposta para “esse pedido entrou duas vezes?”?"
-    ]
+      "O que há por trás de um trabalho bem feito com a circulação no quarto?",
+      "O que há por trás de um trabalho bem feito com a luz do retrato?",
+      "O que há por trás de um trabalho bem feito com as duplicatas da planilha?"
+    ],
+    "pattern": "O que há por trás de um trabalho bem feito com {topic}?",
+    "summary": "Mostre o trabalho e os detalhes que explicam o valor de uma entrega."
   },
   {
     "day": 60,
-    "title": "Iniciante e profissional na mesma cena",
+    "title": "Amador vs Profissional",
     "format": "Clone",
     "tip": "Represente duas perspectivas na mesma cena.",
     "ref": "DVv4fijDZnD",
     "examples": [
-      "Um iniciante e um profissional ouvem “essa cama cabe aqui?”. Veja por onde cada um começa.",
-      "Um iniciante e um profissional ouvem “o rosto continua nítido?”. Veja por onde cada um começa.",
-      "Um iniciante e um profissional ouvem “esse pedido entrou duas vezes?”. Veja por onde cada um começa."
-    ]
+      "Quem começa olha por cima. Quem tem prática testa a circulação no quarto.",
+      "Quem começa olha por cima. Quem tem prática testa a luz do retrato.",
+      "Quem começa olha por cima. Quem tem prática testa as duplicatas da planilha."
+    ],
+    "pattern": "Quem começa olha por cima. Quem tem prática testa {topic}.",
+    "summary": "Encene as duas perspectivas diante de uma mesma situação."
   },
   {
     "day": 61,
-    "title": "Quando você descobriu esse detalhe?",
+    "title": "Com quantos anos você descobriu que ___",
     "format": "Quadro",
     "tip": "Repita a mesma pergunta em episódios curtos.",
     "ref": "DWmls5ulc0N",
     "examples": [
-      "Quando você descobriu o que acontece quando visito um quarto mobiliado?",
-      "Quando você descobriu o que acontece quando recorto um retrato para o perfil?",
-      "Quando você descobriu o que acontece quando organizo uma planilha de vendas?"
-    ]
+      "Com quantos anos você descobriu que a posição da porta muda o espaço livre do quarto?",
+      "Com quantos anos você descobriu que uma janela pode iluminar o rosto de dois jeitos?",
+      "Com quantos anos você descobriu que duas linhas iguais podem ser pedidos diferentes?"
+    ],
+    "pattern": "Com quantos anos você descobriu que {fact}?",
+    "summary": "Apresente uma descoberta e convide o público a contar quando a percebeu."
   },
   {
     "day": 62,
-    "title": "Iniciante e profissional na mesma cena",
+    "title": "Amador vs Profissional",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "",
     "examples": [
-      "Um iniciante e um profissional ouvem “essa cama cabe aqui?”. Veja por onde cada um começa.",
-      "Um iniciante e um profissional ouvem “o rosto continua nítido?”. Veja por onde cada um começa.",
-      "Um iniciante e um profissional ouvem “esse pedido entrou duas vezes?”. Veja por onde cada um começa."
-    ]
+      "Quem começa olha por cima. Quem tem prática testa a circulação no quarto.",
+      "Quem começa olha por cima. Quem tem prática testa a luz do retrato.",
+      "Quem começa olha por cima. Quem tem prática testa as duplicatas da planilha."
+    ],
+    "pattern": "Quem começa olha por cima. Quem tem prática testa {topic}.",
+    "summary": "Encene as duas perspectivas diante de uma mesma situação."
   },
   {
     "day": 63,
-    "title": "Quando você descobriu esse detalhe?",
+    "title": "Com quantos anos você descobriu que ___",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DYAALUMvfrh",
     "examples": [
-      "Quando você descobriu o que acontece quando visito um quarto mobiliado?",
-      "Quando você descobriu o que acontece quando recorto um retrato para o perfil?",
-      "Quando você descobriu o que acontece quando organizo uma planilha de vendas?"
-    ]
+      "Com quantos anos você descobriu que a posição da porta muda o espaço livre do quarto?",
+      "Com quantos anos você descobriu que uma janela pode iluminar o rosto de dois jeitos?",
+      "Com quantos anos você descobriu que duas linhas iguais podem ser pedidos diferentes?"
+    ],
+    "pattern": "Com quantos anos você descobriu que {fact}?",
+    "summary": "Apresente uma descoberta e convide o público a contar quando a percebeu."
   },
   {
     "day": 64,
-    "title": "Iniciante e profissional na mesma cena",
+    "title": "Amador vs Profissional",
     "format": "Novelinha",
     "tip": "Encene uma situação com começo, conflito e resolução.",
     "ref": "",
     "examples": [
-      "Um iniciante e um profissional ouvem “essa cama cabe aqui?”. Veja por onde cada um começa.",
-      "Um iniciante e um profissional ouvem “o rosto continua nítido?”. Veja por onde cada um começa.",
-      "Um iniciante e um profissional ouvem “esse pedido entrou duas vezes?”. Veja por onde cada um começa."
-    ]
+      "Quem começa olha por cima. Quem tem prática testa a circulação no quarto.",
+      "Quem começa olha por cima. Quem tem prática testa a luz do retrato.",
+      "Quem começa olha por cima. Quem tem prática testa as duplicatas da planilha."
+    ],
+    "pattern": "Quem começa olha por cima. Quem tem prática testa {topic}.",
+    "summary": "Encene as duas perspectivas diante de uma mesma situação."
   },
   {
     "day": 65,
-    "title": "Por que complica perto da linha de chegada?",
+    "title": "Te explicando em menos de 1 minuto por que tudo parece virar X quando você está prestes a fazer Y",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DbB2M7vpzWp",
     "examples": [
-      "Por que a última decisão parece mais difícil quando visito um quarto mobiliado?",
-      "Por que a última decisão parece mais difícil quando recorto um retrato para o perfil?",
-      "Por que a última decisão parece mais difícil quando organizo uma planilha de vendas?"
-    ]
+      "Por que a dúvida sobre a circulação no quarto aumenta na hora de decidir?",
+      "Por que a dúvida sobre a luz do retrato aumenta na hora de decidir?",
+      "Por que a dúvida sobre as duplicatas da planilha aumenta na hora de decidir?"
+    ],
+    "pattern": "Por que a dúvida sobre {topic} aumenta na hora de decidir?",
+    "summary": "Explique uma dificuldade que costuma aparecer perto do fim."
   },
   {
     "day": 66,
-    "title": "Quando você descobriu esse detalhe?",
+    "title": "Com quantos anos você descobriu que ___",
     "format": "React",
     "tip": "Pause no detalhe e explique o que o público deve observar.",
     "ref": "DBeWqQFuK6Q",
     "examples": [
-      "Quando você descobriu o que acontece quando visito um quarto mobiliado?",
-      "Quando você descobriu o que acontece quando recorto um retrato para o perfil?",
-      "Quando você descobriu o que acontece quando organizo uma planilha de vendas?"
-    ]
+      "Com quantos anos você descobriu que a posição da porta muda o espaço livre do quarto?",
+      "Com quantos anos você descobriu que uma janela pode iluminar o rosto de dois jeitos?",
+      "Com quantos anos você descobriu que duas linhas iguais podem ser pedidos diferentes?"
+    ],
+    "pattern": "Com quantos anos você descobriu que {fact}?",
+    "summary": "Apresente uma descoberta e convide o público a contar quando a percebeu."
   },
   {
     "day": 67,
-    "title": "Um jeito diferente de fazer isso",
+    "title": "Isso vai mudar a forma de ___",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "",
     "examples": [
-      "Vou mostrar outro jeito de descobrir se “essa cama cabe aqui?”.",
-      "Vou mostrar outro jeito de descobrir se “o rosto continua nítido?”.",
-      "Vou mostrar outro jeito de descobrir se “esse pedido entrou duas vezes?”."
-    ]
+      "Este teste pode mudar sua forma de avaliar a circulação no quarto.",
+      "Este teste pode mudar sua forma de avaliar a luz do retrato.",
+      "Este teste pode mudar sua forma de avaliar as duplicatas da planilha."
+    ],
+    "pattern": "Este teste pode mudar sua forma de avaliar {topic}.",
+    "summary": "Demonstre uma técnica que muda a forma de executar a tarefa."
   },
   {
     "day": 68,
-    "title": "Verdades dos bastidores",
+    "title": "Verdades sobre ___",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "",
     "examples": [
-      "Uma verdade de bastidor que aparece sempre que visito um quarto mobiliado.",
-      "Uma verdade de bastidor que aparece sempre que recorto um retrato para o perfil.",
-      "Uma verdade de bastidor que aparece sempre que organizo uma planilha de vendas."
-    ]
+      "Uma verdade fácil de demonstrar sobre a circulação no quarto: a posição da porta muda o espaço livre do quarto.",
+      "Uma verdade fácil de demonstrar sobre a luz do retrato: uma janela pode iluminar o rosto de dois jeitos.",
+      "Uma verdade fácil de demonstrar sobre as duplicatas da planilha: duas linhas iguais podem ser pedidos diferentes."
+    ],
+    "pattern": "Uma verdade fácil de demonstrar sobre {topic}: {fact}.",
+    "summary": "Conte uma verdade de bastidor usando uma situação observável."
   },
   {
     "day": 69,
-    "title": "Um jeito diferente de fazer isso",
+    "title": "Isso vai mudar a forma de ___",
     "format": "Vídeo narrado",
     "tip": "Narre enquanto mostra cada etapa em ação.",
     "ref": "",
     "examples": [
-      "Vou mostrar outro jeito de descobrir se “essa cama cabe aqui?”.",
-      "Vou mostrar outro jeito de descobrir se “o rosto continua nítido?”.",
-      "Vou mostrar outro jeito de descobrir se “esse pedido entrou duas vezes?”."
-    ]
+      "Este teste pode mudar sua forma de avaliar a circulação no quarto.",
+      "Este teste pode mudar sua forma de avaliar a luz do retrato.",
+      "Este teste pode mudar sua forma de avaliar as duplicatas da planilha."
+    ],
+    "pattern": "Este teste pode mudar sua forma de avaliar {topic}.",
+    "summary": "Demonstre uma técnica que muda a forma de executar a tarefa."
   },
   {
     "day": 70,
-    "title": "Acompanhe um dia da minha rotina",
+    "title": "Um dia comigo sendo ___",
     "format": "Trend com texto",
     "tip": "Use uma tomada simples com uma frase curta na tela.",
     "ref": "DYxnleYvyRv",
     "examples": [
-      "Vem acompanhar um dia comigo, desde a primeira pergunta: “essa cama cabe aqui?”.",
-      "Vem acompanhar um dia comigo, desde a primeira pergunta: “o rosto continua nítido?”.",
-      "Vem acompanhar um dia comigo, desde a primeira pergunta: “esse pedido entrou duas vezes?”."
-    ]
+      "Um dia comigo trabalhando com imóveis: hoje vou testar a circulação no quarto.",
+      "Um dia comigo trabalhando com fotografia: hoje vou testar a luz do retrato.",
+      "Um dia comigo trabalhando com análise de dados: hoje vou testar as duplicatas da planilha."
+    ],
+    "pattern": "Um dia comigo trabalhando com {niche}: hoje vou testar {topic}.",
+    "summary": "Acompanhe uma etapa da rotina e explique uma escolha feita no caminho."
   },
   {
     "day": 71,
-    "title": "O sinal de que é hora de agir",
+    "title": "Se X aconteceu agora, é porque chegou a hora certa de fazer Y",
     "format": "Lofi",
     "tip": "Grave em plano fixo, como numa conversa com alguém.",
     "ref": "DaCK7HuoWb7",
     "examples": [
-      "Quando visito um quarto mobiliado, é hora de parar e fazer este teste.",
-      "Quando recorto um retrato para o perfil, é hora de parar e fazer este teste.",
-      "Quando organizo uma planilha de vendas, é hora de parar e fazer este teste."
-    ]
+      "Se surgiu uma dúvida sobre a circulação no quarto, é hora de fazer este teste.",
+      "Se surgiu uma dúvida sobre a luz do retrato, é hora de fazer este teste.",
+      "Se surgiu uma dúvida sobre as duplicatas da planilha, é hora de fazer este teste."
+    ],
+    "pattern": "Se surgiu uma dúvida sobre {topic}, é hora de fazer este teste.",
+    "summary": "Apresente um sinal concreto de que é hora de agir."
   },
   {
     "day": 72,
-    "title": "Acompanhe um dia da minha rotina",
+    "title": "Um dia comigo sendo ___",
     "format": "Vídeo narrado",
     "tip": "Narre enquanto mostra cada etapa em ação.",
     "ref": "",
     "examples": [
-      "Vem acompanhar um dia comigo, desde a primeira pergunta: “essa cama cabe aqui?”.",
-      "Vem acompanhar um dia comigo, desde a primeira pergunta: “o rosto continua nítido?”.",
-      "Vem acompanhar um dia comigo, desde a primeira pergunta: “esse pedido entrou duas vezes?”."
-    ]
+      "Um dia comigo trabalhando com imóveis: hoje vou testar a circulação no quarto.",
+      "Um dia comigo trabalhando com fotografia: hoje vou testar a luz do retrato.",
+      "Um dia comigo trabalhando com análise de dados: hoje vou testar as duplicatas da planilha."
+    ],
+    "pattern": "Um dia comigo trabalhando com {niche}: hoje vou testar {topic}.",
+    "summary": "Acompanhe uma etapa da rotina e explique uma escolha feita no caminho."
   }
 ]
