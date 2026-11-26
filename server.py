@@ -90,7 +90,7 @@ class Handler(BaseHTTPRequestHandler):
         path=urlsplit(self.path).path
         if path=="/api/state":
             if HOSTED and (not DATABASE_URL or "sid=" not in self.headers.get("Cookie","")):
-                return self.send(200,dict(ai=bool(KEY and DATABASE_URL),hosted=True,user=None))
+                return self.send(200,dict(ai=bool(KEY and DATABASE_URL),hosted=True,setup="Configure OPENAI_API_KEY na Vercel." if not KEY else "Conecte o banco Postgres na Vercel." if not DATABASE_URL else "",user=None))
             with closing(connect()) as db:
                 u,_=self.session(db)
                 return self.send(200,dict(ai=bool(KEY),hosted=HOSTED,user=dict(id=u["id"],email=u["email"],credits=u["credits"]) if u else None))
@@ -145,8 +145,17 @@ class Handler(BaseHTTPRequestHandler):
             day=int(d["day"]);niche=str(d["niche"]).strip()
             if not 1<=day<=72 or not 2<=len(niche)<=140:raise Problem("Informe um nicho entre 2 e 140 caracteres.")
             if u["credits"]<1:raise Problem("Seus créditos acabaram.")
-            out=ai('Produza exatamente três aberturas diferentes e específicas, mantendo a estrutura da ideia. JSON {"hooks":["...","...","..."]}.',dict(ideia=CAT[day-1]["title"],formato=CAT[day-1]["format"],nicho=niche))
-            if not strings(out.get("hooks"),3) or len(set(out["hooks"]))!=3:raise Problem("A IA devolveu ganchos incompletos. Tente novamente.",502)
+            history=d.get("history",[])
+            if not isinstance(history,list):raise Problem("Histórico inválido.")
+            history=[v[:220] for v in history[-18:] if isinstance(v,str)]
+            idea=CAT[day-1]
+            context=dict(ideia=idea["title"],objetivo=idea["summary"],formato=idea["format"],nicho=niche,evitar=history)
+            prompt='Crie três ganchos originais em português, cada um sobre uma situação, decisão e assunto distintos do nicho. Preserve o mecanismo do título e o formato do dia. Varie as etapas da jornada do público. Evite os temas e paráfrases do histórico. Para imóveis, explore também negociação, rotina do bairro, mudança, perfil do comprador e comparação de opções. Não se concentre em porta, janela ou medidas. JSON {"hooks":["...","...","..."]}.'
+            out=ai(prompt,context)
+            hooks=out.get("hooks",[])
+            normalized=lambda v: " ".join(v.casefold().split()).rstrip(".!?")
+            if not strings(hooks,3) or len({normalized(v) for v in hooks})!=3 or {normalized(v) for v in hooks}.intersection(normalized(v) for v in history):
+                raise Problem("A IA devolveu ganchos repetidos ou incompletos. Tente novamente.",502)
             with db:
                 added=db.execute("INSERT INTO jobs VALUES(?,?,?,?,?) ON CONFLICT(id,uid) DO NOTHING",(job,uid,day,niche,json.dumps(out))).rowcount
                 if added and not db.execute("UPDATE users SET credits=credits-1 WHERE id=? AND credits>0",(uid,)).rowcount:raise Problem("Seus créditos acabaram.")
@@ -157,7 +166,7 @@ class Handler(BaseHTTPRequestHandler):
         lookup="SELECT data FROM scripts WHERE uid=? AND job=? AND idx=?"
         cached=db.execute(lookup,args).fetchone()
         if cached:return self.send(200,json.loads(cached["data"]))
-        out=ai('Desenvolva o GANCHO escolhido nas duas versões de uma vez. JSON {"cenas":[{"tempo":"0–4s","imagem":"ação visível","fala":"fala exata"}],"legenda":"descrição do vídeo narrado","frase":"uma única frase curta para a tela","take":"instrução visual de 7 a 10s sem fala","descricao":"descrição completa pronta para publicar com parágrafos e CTA"}. Narração 20–45s com tempo realista. Se o gancho promete uma quantidade, entregue todos os itens nas duas versões. Não use campos genéricos nem marcadores a preencher.',dict(gancho=json.loads(row["data"])["hooks"][idx],nicho=row["niche"],ideia=CAT[row["day"]-1]))
+        out=ai('Desenvolva o GANCHO escolhido nas duas versões de uma vez. JSON {"cenas":[{"tempo":"0–4s","imagem":"ação visível","fala":"fala exata"}],"legenda":"descrição do vídeo narrado","frase":"uma única frase curta para a tela","take":"instrução visual de 7 a 10s sem fala","descricao":"descrição completa pronta para publicar com parágrafos e CTA"}. Narração 20–45s com tempo realista. Se o gancho promete uma quantidade, entregue todos os itens nas duas versões. Não use campos genéricos nem marcadores a preencher.',dict(gancho=json.loads(row["data"])["hooks"][idx],nicho=row["niche"],ideia=CAT[row["day"]-1]["title"],formato=CAT[row["day"]-1]["format"]))
         if not objtext(out,["legenda","frase","take","descricao"]) or not isinstance(out.get("cenas"),list) or not out["cenas"] or not all(objtext(c,["tempo","imagem","fala"]) for c in out["cenas"]):raise Problem("Resposta incompleta da IA. Tente novamente.",502)
         db.execute("INSERT INTO scripts VALUES(?,?,?,?) ON CONFLICT(uid,job,idx) DO NOTHING",(*args,json.dumps(out)));db.commit();self.send(200,json.loads(db.execute(lookup,args).fetchone()["data"]))
 if __name__=="__main__":

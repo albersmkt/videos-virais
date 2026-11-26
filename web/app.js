@@ -19,7 +19,7 @@ const pad=n=>String(n).padStart(2,'0');
 function draw(){const c=catalog[dayId()-1];if(c)detail(c);else home()}
 function home() {
   const done=local.done.length;
-  const balance=(state.ai && state.user)?state.user.credits:(local.modelCredits??100);
+  const balance=state.user?.credits ?? '—';
   $('app').innerHTML=`
     <section class="overview">
       <div><span class="meta">Arquivo prático de conteúdo</span>
@@ -28,7 +28,7 @@ function home() {
       </div>
       <div class="dashboard">
         <div><span class="meta">Seu progresso</span><strong>${Math.round(done/72*100)}%</strong><div class="meter"><i style="width:${done/72*100}%"></i></div></div>
-        <div><span class="meta">${state.ai && state.user?'Créditos de IA':'Créditos de modelos'}</span><strong>${balance}</strong><small>1 por geração de ganchos</small></div>
+        <div><span class="meta">Créditos de IA</span><strong>${balance}</strong><small>1 por geração de ganchos</small></div>
         <div><label class="meta" for="niche">Qual seu nicho?</label><input id="niche" maxlength="140" placeholder="Ex.: corretor de imóveis" value="${esc(local.niche)}"><small>Salvo neste dispositivo</small></div>
       </div>
     </section>
@@ -51,7 +51,7 @@ function detail(c) {
   const job=local.jobs[c.day],done=local.done.includes(c.day);
   const related=catalog.filter(k=>k.title===c.title && k.day!==c.day);
   const useAI=!!(state.ai && state.user);
-  const balance=useAI?state.user.credits:(local.modelCredits??100);
+  const balance=state.user?.credits ?? '—';
   $('app').innerHTML=`<a class="back" href="#inicio">‹ &nbsp; Calendário</a><div class="studio day">
   <article><span class="meta">Dia ${pad(c.day)}</span> · <span class="badge">${esc(c.format)}</span>
   <h1>${esc(c.title)}</h1><p class="muted">${esc(c.summary)}</p><button id="done">${done?'✓ Concluído · desfazer':'Marcar como concluído'}</button>
@@ -60,33 +60,32 @@ function detail(c) {
   </section></article><section>
   <span class="meta">Exemplos prontos</span>${c.examples.map(v=>`<p class="example">${esc(v)}</p>`).join('')}
   <div class="generator"><div class="line"><span class="badge">Gerar para o meu nicho</span><span class="badge">${balance} créditos</span></div>
-  <h2>3 exemplos prontos, adaptados ao seu nicho.</h2><p class="muted">${useAI?'Geração por IA':'Geração por modelos do calendário'} · 1 crédito por rodada.</p>
+  <h2>Crie três ganchos para seu nicho.</h2><p class="muted">${!state.ai ? 'Geração indisponível. '+(state.setup || 'Verifique a configuração da OpenAI.') : useAI ? 'OpenAI · 1 crédito por rodada.' : 'Entre na sua conta para gerar com a OpenAI.'}</p>
   <label for="niche">Seu nicho</label><input id="niche" maxlength="140" value="${esc(local.niche)}" placeholder="Ex.: corretor de imóveis">
-  <p><button id="generate" class="primary">Gerar 3 exemplos · −1</button></p>
+  <p><button id="generate" class="primary" ${state.ai ? '' : 'disabled'}>${state.ai && !state.user ? 'Entrar para gerar' : 'Gerar 3 ganchos com IA'}</button></p>
   <div id="hooks"></div></div></section></div><div id="output"></div>
   <section class="daynav">${related.length?'<h3>Outros formatos desta ideia</h3>'+related.map(k=>`<a class="btn" href="${link(k.day)}">Dia ${k.day} · ${esc(k.format)}</a>`).join(' '):''}
   <div class="line">${c.day>1?`<a href="${link(c.day-1)}">Dia anterior</a>`:''}${c.day<72?`<a href="${link(c.day+1)}">Próximo dia</a>`:''}</div></section>`;
   $('done').onclick=()=>{local.done=done?local.done.filter(x=>x!==c.day):[...local.done,c.day];persist();detail(c)};
   $('niche').oninput=e=>{local.niche=e.target.value;persist()};
   $('generate').onclick=async()=>{
+    if(!state.user)return openAuth('login');
     const niche=local.niche.trim();
     if(niche.length<2){$('niche').focus();return say('Informe seu nicho primeiro.')}
     await run($('generate'),'Gerando exemplos…',async()=>{
-      if(useAI){
+      {
         const key=c.day+'|'+niche; local.pending??={};
         const id=local.pending[key]??=crypto.randomUUID();persist();
-        const data=await api('hooks',{job:id,day:c.day,niche});
+        const previous=Object.values(local.jobs).filter(j=>norm(j.niche||'')===norm(niche)).flatMap(j=>j.hooks||[]);
+        const history=[...new Set([...(Array.isArray(local.history?.[norm(niche)])?local.history[norm(niche)]:[]),...previous])].slice(-18);
+        const data=await api('hooks',{job:id,day:c.day,niche,history});
+        local.history??={};Object.defineProperty(local.history,norm(niche),{value:[...history,...data.hooks].slice(-18),enumerable:true,configurable:true,writable:true});
         local.jobs[c.day]={...data,id,niche,scripts:{}};delete local.pending[key];persist();await sync();
-      }else{
-        if(balance<1)return say('Seu saldo de créditos de modelos acabou.');
-        const last=local.jobs[c.day];
-        const round=last?.mode==='model' && last.niche===niche?last.round+1:0;
-        local.jobs[c.day]=modelBatch(c,niche,round);local.modelCredits=balance-1;persist();
       }
       draw();
     });
   };
-  if(job)showHooks(c,job);
+  if(job?.id)showHooks(c,job);
 }
 function legacyDemo(i){const d=demos[i];return {cenas:[{tempo:'0–4s',imagem:d.take,fala:d.hook+'.'},...d.items.map(([a,b],n)=>({tempo:(4+n*6)+'–'+(10+n*6)+'s',imagem:a,fala:b}))],legenda:'Leve esta ideia para a próxima visita. Qual desses detalhes você costuma observar?',frase:d.hook,take:d.take+' Mantenha a frase na tela por 8 segundos, sem narração.',descricao:d.hook+'\n\n'+d.items.map(([a,b],n)=>(n+1)+'. '+a+'. '+b).join('\n\n')+'\n\nSalve para consultar na próxima visita.'}}
 async function run(button,label,fn){if(busy)return;busy=true;let prev=button.textContent;button.textContent=label;button.disabled=true;try{await fn()}catch(e){say(e.message)}finally{busy=false;button.disabled=false;button.textContent=prev}}
