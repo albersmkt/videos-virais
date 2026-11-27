@@ -94,7 +94,14 @@ async function copy(v){try{await navigator.clipboard.writeText(v);say('Copiado.'
 function output(s){const parts=[s.cenas.map(c=>c.tempo+' · '+c.imagem+'\n'+c.fala).join('\n\n')+'\n\n'+s.legenda,s.frase,s.descricao,s.frase+'\n\n'+s.take+'\n\n'+s.descricao];$('output').innerHTML='<div class="result studio"><section class="panel"><span class="meta">Versão 1</span><h2>Vídeo narrado</h2>'+s.cenas.map(c=>'<div class="scene"><span class="badge">'+esc(c.tempo)+'</span><p><b>'+esc(c.imagem)+'</b></p><p>'+esc(c.fala)+'</p></div>').join('')+'<h3>Descrição</h3><p class="content">'+esc(s.legenda)+'</p><button data-part="0">Copiar roteiro e descrição</button></section><section class="panel"><span class="meta">Versão 2</span><h2>Frase na tela</h2><h3>'+esc(s.frase)+'</h3><button data-part="1">Copiar frase</button><h3>O que gravar</h3><p>'+esc(s.take)+'</p><h3>Descrição para publicar</h3><p class="content">'+esc(s.descricao)+'</p><button data-part="2">Copiar descrição</button> <button data-part="3">Copiar versão completa</button></section></div>';$('output').onclick=e=>{if(e.target.dataset.part!==undefined)copy(parts[e.target.dataset.part])}}
 function openAuth(mode){authMode=mode;$('atitle').textContent={login:'Entrar',register:'Criar conta',password:'Alterar senha'}[mode];$('autherror').textContent='';$('fields').innerHTML=(mode==='password'?'<label>Senha atual<input type="password" name="old" autocomplete="current-password" required></label>':'<label>E-mail<input type="email" name="email" autocomplete="username" required></label>')+'<label>'+(mode==='password'?'Nova senha':'Senha')+'<input type="password" name="password" minlength="8" maxlength="256" autocomplete="'+(mode==='login'?'current-password':'new-password')+'" required></label>';if(state.hosted&&mode==='register')$('fields').insertAdjacentHTML('beforeend','<label>Código privado do estúdio<input type="password" name="invite" required></label>');$('dialog').showModal()}
 document.addEventListener('click',e=>{if(e.target.dataset.auth)openAuth(e.target.dataset.auth)});$('close').onclick=()=>$('dialog').close();$('authform').onsubmit=async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target));try{await api(authMode,authMode==='password'?{old:d.old,new:d.password}:d);$('dialog').close();local=null;await sync();draw()}catch(err){$('autherror').textContent=err.message}};
-window.addEventListener('hashchange',()=>{draw();window.scrollTo(0,0)});(async()=>{const access=new URLSearchParams(location.hash.slice(1)).get('acesso');
+window.addEventListener('hashchange',()=>{
+  if(new URLSearchParams(location.hash.slice(1)).has('acesso')){
+    location.reload();
+    return;
+  }
+  if(catalog && state) draw();
+  window.scrollTo(0,0);
+});(async()=>{const access=new URLSearchParams(location.hash.slice(1)).get('acesso');
 if(access){
   await api('personal',{key:access});
   history.replaceState(null,'',location.pathname+location.search);
