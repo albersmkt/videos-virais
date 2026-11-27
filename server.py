@@ -111,6 +111,18 @@ class Handler(BaseHTTPRequestHandler):
         except Exception:self.send(502,{"error":"A operação falhou. Confira a conexão, a chave e o saldo do provedor de IA e tente novamente."})
     def action(self,db,d):
         route=self.path
+        if route == "/api/personal":
+            digest = hashlib.sha256(str(d.get("key", "")).encode()).hexdigest()
+            if not hmac.compare_digest(digest, "9e3b2b4e3e12553072361570690b0d2231bf48b4881252354699970be209546c"):
+                raise Problem("Link de acesso inválido.", 403)
+            # Negative ID is reserved for the private studio, outside the signup sequence.
+            db.execute("INSERT INTO users(id,email,salt,password) VALUES(-1,NULL,?,?) ON CONFLICT(id) DO NOTHING",
+                       (secrets.token_hex(16), secrets.token_hex(32)))
+            token = secrets.token_urlsafe(32)
+            lifetime = 60 * 60 * 24 * 365
+            db.execute("INSERT INTO sessions VALUES(?,?,?)", (token, -1, int(time.time()) + lifetime))
+            db.commit()
+            return self.send(200, {}, cookie=f"sid={token}; Path=/; HttpOnly; SameSite=Strict; Max-Age={lifetime}")
         if route in ("/api/login","/api/register"):
             email=str(d["email"]).lower().strip();password=str(d["password"])
             if not 3<len(email)<=254 or '@' not in email or not 8<=len(password)<=256:raise Problem("Informe seu e-mail e uma senha de 8 a 256 caracteres.")
