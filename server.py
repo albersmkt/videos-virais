@@ -86,25 +86,13 @@ class Handler(BaseHTTPRequestHandler):
         c=SimpleCookie();c.load(self.headers.get("Cookie",""))
         token=c["sid"].value if "sid" in c else ""
         return db.execute("SELECT users.* FROM sessions JOIN users ON uid=users.id WHERE token=? AND expires>?",(token,time.time())).fetchone(),token
-    def studio_user(self, db):
-        user, _ = self.session(db)
-        if user:
-            return user
-        # One shared credit balance for the public studio, separate from existing accounts.
-        user = db.execute("SELECT * FROM users WHERE id=-2").fetchone()
-        if not user:
-            db.execute("INSERT INTO users(id,email,salt,password) VALUES(-2,NULL,?,?) ON CONFLICT(id) DO NOTHING",
-                       (secrets.token_hex(16), secrets.token_hex(32)))
-            db.commit()
-            user = db.execute("SELECT * FROM users WHERE id=-2").fetchone()
-        return user
     def do_GET(self):
         path=urlsplit(self.path).path
         if path=="/api/state":
-            if HOSTED and not DATABASE_URL:
+            if HOSTED and (not DATABASE_URL or "sid=" not in self.headers.get("Cookie","")):
                 return self.send(200,dict(ai=bool(KEY and DATABASE_URL),hosted=True,setup="Configure OPENAI_API_KEY na Vercel." if not KEY else "Conecte o banco Postgres na Vercel." if not DATABASE_URL else "",user=None))
             with closing(connect()) as db:
-                u=self.studio_user(db)
+                u,_=self.session(db)
                 return self.send(200,dict(ai=bool(KEY),hosted=HOSTED,user=dict(id=u["id"],email=u["email"],credits=u["credits"]) if u else None))
         files={"/modelos.js":("modelos.js","text/javascript"),"/":("index.html","text/html"),"/app.js":("app.js","text/javascript"),"/style.css":("style.css","text/css"),"/catalog.json":("catalog.json","application/json")}
         if path not in files:return self.send(404,{})
@@ -150,10 +138,7 @@ class Handler(BaseHTTPRequestHandler):
             if not u or not hmac.compare_digest(secret(password,u["salt"]),u["password"]):raise Problem("E-mail ou senha incorretos.",401)
             token=secrets.token_urlsafe(32);db.execute("INSERT INTO sessions VALUES(?,?,?)",(token,u["id"],int(time.time())+604800));db.commit()
             return self.send(200,{},cookie="sid="+token+"; Path=/; HttpOnly; SameSite=Strict; Max-Age=604800")
-        if route in ("/api/hooks", "/api/script"):
-            u = self.studio_user(db)
-        else:
-            u,t=self.session(db)
+        u,t=self.session(db)
         if not u:raise Problem("Entre para usar o estúdio.",401)
         uid=u["id"]
         if route=="/api/logout":
