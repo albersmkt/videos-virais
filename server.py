@@ -1,5 +1,6 @@
 """Shark Reels · servidor pessoal, Python 3.9+."""
 import hashlib, hmac, json, os, secrets, sqlite3, time, urllib.request, webbrowser
+import re
 from contextlib import closing
 from http import HTTPStatus
 from http.cookies import SimpleCookie
@@ -62,6 +63,15 @@ def init():
         db.executescript(SCHEMA)
 def secret(p,s):
     return hashlib.pbkdf2_hmac('sha256',p.encode(),bytes.fromhex(s),220000).hex()
+def real_estate(niche):
+    return bool(re.search(r"im[oó]ve(?:l|is)|imobili[aá]ri|corret(?:or|ora) de terrenos", niche, re.I))
+
+def inspection_hook(text):
+    return bool(re.search(
+        r"circulação (?:de|do) ar|orientação solar|posição do sol|barulho da rua|"
+        r"(?:abra|abrir|teste) (?:as? )?janelas?|(?:em|nos?) (?:diferentes horários|horários diferentes)|"
+        r"sinta a brisa|veja como o sol|passe um dia no imóvel", text, re.I))
+
 def ai(task,info):
     editorial = (
         "Quando o nicho for corretagem de imóveis ou equivalente, escreva para o Instagram de quem vende imóveis. "
@@ -81,6 +91,10 @@ def ai(task,info):
         "Quando fizer sentido, encerre convidando a seguir para aprender uma dica complementar específica. "
         "Cada gancho deve caber em uma frase curta na tela. Guarde explicações e convites para a legenda ou narração. "
         "Use gravações simples que o corretor faça sozinho, com o celular ou imagens já disponíveis. "
+        "Para pautas de bairro, ligue uma conveniência real a um ganho de rotina. Exemplo de raciocínio: "
+        "padaria no caminho da escola permite resolver duas tarefas numa saída. Evite presumir valorização. "
+        "A frase entrega esse aprendizado por si só. Tanto a legenda quanto o roteiro aprofundam o benefício "
+        "sem mandar o comprador testar o imóvel. Responda com transparência a fatos conhecidos. "
         "Evite vistorias, busca de defeitos, alertas de barulho, visitas repetidas, passar o dia no imóvel, "
         "entrevistar vizinhos e narrativas que levantem suspeitas sobre corretores. "
         "Apresente situações hipotéticas quando faltarem dados sobre o imóvel. Nunca invente características, "
@@ -200,9 +214,16 @@ class Handler(BaseHTTPRequestHandler):
             history=[v[:220] for v in history[-18:] if isinstance(v,str)]
             idea=CAT[day-1]
             context=dict(ideia=idea["title"],objetivo=idea["summary"],formato=idea["format"],nicho=niche,evitar=history)
+            if real_estate(niche):
+                context["objetivo"] = "Ensine uma descoberta útil ao comprador na própria frase. Use a estrutura do título em três temas educativos diferentes."
             prompt='Crie três ganchos originais em português, cada um sobre uma situação, decisão e assunto distintos do nicho. Preserve o mecanismo do título e o formato do dia. Varie as etapas da jornada do público. Evite os temas e paráfrases do histórico. JSON {"hooks":["...","...","..."]}.'
             out=ai(prompt,context)
             hooks=out.get("hooks",[])
+            if real_estate(niche) and strings(hooks, 3) and any(inspection_hook(h) for h in hooks):
+                out = ai(prompt + " Refaça o trio com novas pautas educativas sobre compra, bairro ou potencial do imóvel.", context)
+                hooks = out.get("hooks", [])
+                if strings(hooks, 3) and any(inspection_hook(h) for h in hooks):
+                    raise Problem("Os ganchos voltaram ao tema de vistoria. Gere outra rodada.", 502)
             normalized=lambda v: " ".join(v.casefold().split()).rstrip(".!?")
             if not strings(hooks,3) or len({normalized(v) for v in hooks})!=3 or {normalized(v) for v in hooks}.intersection(normalized(v) for v in history):
                 raise Problem("A IA devolveu ganchos repetidos ou incompletos. Tente novamente.",502)
