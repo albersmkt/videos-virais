@@ -11,7 +11,7 @@ const demos=[
 async function api(path,body){const r=await fetch('/api/'+path,body===undefined?{}:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const v=await r.json();if(!r.ok)throw Error(v.error||'Falha na conexão.');return v}
 function storageKey(){return 'shark-studio-'+(state.user?.id||'visitante')}
 function persist(){localStorage.setItem(storageKey(),JSON.stringify(local))}
-async function sync(){state=await api('state');try{local=JSON.parse(localStorage.getItem(storageKey()) ?? (state.user?.id===-2 ? localStorage.getItem("shark-studio-visitante") : null))}catch{}local=local||{};local.done??=[];local.jobs??={};local.niche??='';$('account').innerHTML=state.user?.id<0?'':state.user?'<span class="badge">'+state.user.credits+' créditos</span><button data-auth="password">Alterar senha</button><button id="logout">Sair</button>':'<button data-auth="login">Entrar</button><button data-auth="register" class="primary">Criar conta</button>';if($('logout'))$('logout').onclick=async()=>{await api('logout',{});local=null;await sync();draw()}}
+async function sync(){state=await api('state');try{local=JSON.parse(localStorage.getItem(storageKey()) ?? (state.user?.id===-2 ? localStorage.getItem("shark-studio-visitante") : null))}catch{}local=local||{};local.done??=[];local.jobs??={};local.niche??='';$('account').innerHTML=state.user?.id<0?'':state.user?'<button data-auth="password">Alterar senha</button><button id="logout">Sair</button>':'<button data-auth="login">Entrar</button><button data-auth="register" class="primary">Criar conta</button>';if($('logout'))$('logout').onclick=async()=>{await api('logout',{});local=null;await sync();draw()}}
 function say(msg){$('notice').textContent=msg;clearTimeout(say.t);say.t=setTimeout(()=>$('notice').textContent='',5000)}
 function dayId(){return Number(location.hash.match(/^#dia\/(\d+)$/)?.[1])}
 const link=d=>'#dia/'+d;
@@ -19,7 +19,6 @@ const pad=n=>String(n).padStart(2,'0');
 function draw(){const c=catalog[dayId()-1];if(c)detail(c);else home()}
 function home() {
   const done=local.done.length;
-  const balance=state.user?.credits ?? '—';
   $('app').innerHTML=`
     <section class="overview">
       <div><span class="meta">Arquivo prático de conteúdo</span>
@@ -28,7 +27,6 @@ function home() {
       </div>
       <div class="dashboard">
         <div><span class="meta">Seu progresso</span><strong>${Math.round(done/72*100)}%</strong><div class="meter"><i style="width:${done/72*100}%"></i></div></div>
-        <div><span class="meta">Créditos de IA</span><strong>${balance}</strong><small>1 por geração de ganchos</small></div>
         <div><label class="meta" for="niche">Qual seu nicho?</label><input id="niche" maxlength="140" placeholder="Ex.: corretor de imóveis" value="${esc(local.niche)}"><small>Salvo neste dispositivo</small></div>
       </div>
     </section>
@@ -51,7 +49,6 @@ function detail(c) {
   const job=local.jobs[c.day],done=local.done.includes(c.day);
   const related=catalog.filter(k=>k.title===c.title && k.day!==c.day);
   const useAI=!!(state.ai && state.user);
-  const balance=state.user?.credits ?? '—';
   $('app').innerHTML=`<a class="back" href="#inicio">‹ &nbsp; Calendário</a><div class="studio day">
   <article><span class="meta">Dia ${pad(c.day)}</span> · <span class="badge">${esc(c.format)}</span>
   <h1>${esc(c.title)}</h1><p class="muted">${esc(c.summary)}</p><button id="done">${done?'✓ Concluído · desfazer':'Marcar como concluído'}</button>
@@ -59,8 +56,8 @@ function detail(c) {
   ${c.ref?`<div class="line"><span class="badge">Instagram</span><a target="_blank" rel="noopener" href="https://www.instagram.com/reel/${c.ref}/">Ver original ↗</a></div><iframe loading="lazy" title="Reel de referência do dia ${c.day}" src="https://www.instagram.com/reel/${c.ref}/embed/"></iframe>`:'<p class="muted">Este dia está sem vídeo de referência.</p>'}
   </section></article><section>
   <span class="meta">Exemplos prontos</span>${c.examples.map(v=>`<p class="example">${esc(v)}</p>`).join('')}
-  <div class="generator"><div class="line"><span class="badge">Gerar para o meu nicho</span><span class="badge">${balance} créditos</span></div>
-  <h2>Crie três ganchos para seu nicho.</h2><p class="muted">${!state.ai ? 'Geração indisponível. '+(state.setup || 'Verifique a configuração da OpenAI.') : useAI ? 'OpenAI · 1 crédito por rodada.' : 'Entre na sua conta para gerar com a OpenAI.'}</p>
+  <div class="generator"><div class="line"><span class="badge">Gerar para o meu nicho</span></div>
+  <h2>Crie três ganchos para seu nicho.</h2><p class="muted">${!state.ai ? 'Geração indisponível. '+(state.setup || 'Verifique a configuração da OpenAI.') : useAI ? 'Geração com OpenAI.' : 'Entre na sua conta para gerar com a OpenAI.'}</p>
   <label for="niche">Seu nicho</label><input id="niche" maxlength="140" value="${esc(local.niche)}" placeholder="Ex.: corretor de imóveis">
   <p><button id="generate" class="primary" ${state.ai ? '' : 'disabled'}>${state.ai && !state.user ? 'Entrar para gerar' : 'Gerar 3 ganchos com IA'}</button></p>
   <div id="hooks"></div></div></section></div><div id="output"></div>
